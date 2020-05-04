@@ -1,0 +1,14 @@
+.news-card__authorization {
+  background-color: #FFF;
+  border-radius: 8px;
+  border: none;
+  padding: 14px 14px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.625em;
+  line-height: 12px;
+  position: absolute;
+  top: 24px;
+  right: 70px;
+}

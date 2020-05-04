@@ -1,0 +1,20 @@
+.news-card__save {
+  background-image: url(../../../images/Rectangle_inactive.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px 20px;
+  background-color:#FFF;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 8px;
+  border: none;
+}
+
+.news-card__save:hover {
+  background-image: url(../../../images/Rectangle_active.png);
+}
+
+.news-card__save:active {
+  background-image: url(../../../images/Rectangle_saved.png);
+}
