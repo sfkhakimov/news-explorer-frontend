@@ -1,0 +1,10 @@
+.search-failed__title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.625em;
+  line-height: 30px;
+  color: #1A1B22;
+  margin: 0;
+  padding-bottom: 16px;
+}
