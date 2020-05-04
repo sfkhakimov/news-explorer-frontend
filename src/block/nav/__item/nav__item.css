@@ -1,0 +1,9 @@
+.nav__item {
+  list-style-type: none;
+  margin-right: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__item:last-of-type {
+}
