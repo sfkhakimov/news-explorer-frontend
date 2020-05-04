@@ -1,3 +1,9 @@
-h1 {
-  color: red;
-}
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(./block/page/page.css);
+@import url(./block/search/search.css);
+@import url(./block/header/header.css);
+@import url(./block/nav/nav.css);
+@import url(./block/main/main.css);
+@import url(./block/result/result.css);
+@import url(./block/news-card/news-card.css);

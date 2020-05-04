@@ -2,12 +2,94 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Webpack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsExplorer</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
-  <h1>Hello</h1>
-  <a href="./article.html">Тест</a>
+
+  <section class="page">
+
+    <header class="header">
+      <div class="header__container">
+        <p class="header__name-project">NewsExplorer</p>
+        <div class="header__navigation-container">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item"><a href="" class="nav__link">Главная</a></li>
+              <li class="nav__item"><a href="" class="nav__link">Авторизоваться</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="search">
+      <div class="search__container">
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <form action="" class="search__form">
+          <input type="text" class="search__field" placeholder="Введите тему новости">
+          <buttom class="search__button">Найти</buttom>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="main">
+
+    <div class="result">
+      <div class="result__container">
+        <h2 class="result__title">Результаты поиска</h2>
+        <div class="result__cards">
+          <div class="news-card">
+            <div class="news-card__image">
+              <button class="news-card__save"></button>
+            </div>
+            <div class="news-card__container">
+              <p class="news-card__date">2 августа, 2019</p>
+              <h3 class="news-card__title">Национальное достояние – парки</h3>
+              <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                 сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                  где и сегодня каждый может приобщиться к природе.</p>
+              <p class="news-card__source">Лента.ру</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="news-card__image">
+              <button class="news-card__save"></button>
+            </div>
+            <div class="news-card__container">
+              <p class="news-card__date">2 августа, 2019</p>
+              <h3 class="news-card__title">Национальное достояние – парки</h3>
+              <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                 сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                  где и сегодня каждый может приобщиться к природе.</p>
+              <p class="news-card__source">Лента.ру</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="news-card__image">
+              <button class="news-card__authorization">Войдите, чтобы сохранять статьи</button>
+              <button class="news-card__save"></button>
+            </div>
+            <div class="news-card__container">
+              <p class="news-card__date">2 августа, 2019</p>
+              <h3 class="news-card__title">Национальное достояние – парки</h3>
+              <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                 сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                  где и сегодня каждый может приобщиться к природе.</p>
+              <p class="news-card__source">Лента.ру</p>
+            </div>
+          </div>
+        </div>
+        <button class="result__show-more">Показать еще</button>
+      </div>
+    </div>
+
+  </section>
+
   <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>
