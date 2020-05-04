@@ -1,0 +1,14 @@
+@import url(./__container/header__container.css);
+@import url(./__name-project/header__name-project.css);
+@import url(./__navigation-container/header____navigation-container.css);
+
+.header {
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-size: 16px;
+  height: 80px;
+  background: rgba(196, 196, 196, 0.01);
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
