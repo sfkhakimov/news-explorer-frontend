@@ -1,0 +1,17 @@
+.result__show-more {
+  border: none;
+  background-color: #FFF;
+  border-radius: 80px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125em;
+  line-height: 24px;
+  padding: 18px 84px 22px;
+  display: flex;
+  align-self: center;
+}
+
+.result__show-more:hover {
+  opacity: .9;
+}

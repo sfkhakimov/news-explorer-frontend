@@ -1,0 +1,7 @@
+.result__container {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  margin: auto;
+  padding-top: 80px;
+}
