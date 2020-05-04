@@ -1,0 +1,13 @@
+.search__button {
+  border-radius: 100px;
+  background: #2F71E5;
+  position: absolute;
+  padding: 19px 54px 19px 54px;
+  font-size: 1.125em;
+  line-height: 1.5;
+  right: 0;
+}
+
+.search__button:hover {
+  cursor: pointer;
+}

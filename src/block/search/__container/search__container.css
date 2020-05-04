@@ -1,0 +1,7 @@
+.search__container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 608px;
+  margin: 0 auto;
+}
