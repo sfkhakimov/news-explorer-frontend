@@ -1,0 +1,11 @@
+.about__text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125em;
+  line-height: 24px;
+  color: #1A1B22;
+  margin: 0;
+  padding-bottom: 18px;
+  max-width: 600px;
+}
