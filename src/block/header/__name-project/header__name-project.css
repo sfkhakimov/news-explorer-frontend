@@ -1,5 +1,8 @@
+@import url(./_theme_white/header__name-project_theme_white.css);
+
 .header__name-project {
   color: #FFF;
   font-family: 'Roboto Slab';
   font-size: 1.25em;
+  line-height: 24px;
 }

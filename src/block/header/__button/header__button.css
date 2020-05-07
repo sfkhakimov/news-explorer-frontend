@@ -1,0 +1,13 @@
+@import url(./_theme_white/header__button_theme_white.css);
+
+.header__button {
+  color: #FFF;
+  font-size: 1.125em;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #FFF;
+  box-sizing: border-box;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
