@@ -64,7 +64,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/saved-articles/article.html',
+      template: './src/article.html',
       filename: 'article.html',
     }),
     new WebpackMd5Hash(),
