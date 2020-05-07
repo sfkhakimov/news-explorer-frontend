@@ -1,0 +1,9 @@
+@import url(./__container/footer__container.css);
+@import url(./__navigation/footer__navigation.css);
+@import url(./__text/footer__text.css);
+
+.footer {
+  background-color: #FFF;
+  max-width: 1440px;
+  margin: auto;
+}
