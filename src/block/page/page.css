@@ -2,5 +2,6 @@
   background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
   background-size: cover;
   background-position: center;
-  height: 64vh
+  height: 64vh;
+  max-height: 576px;
 }
