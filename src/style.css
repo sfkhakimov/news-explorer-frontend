@@ -7,3 +7,8 @@
 @import url(./block/main/main.css);
 @import url(./block/result/result.css);
 @import url(./block/news-card/news-card.css);
+@import url(./block/loading/loading.css);
+@import url(./block/search-failed/search-failed.css);
+@import url(./block/popup/popup.css);
+@import url(./block/about/about.css);
+@import url(./block/footer/footer.css);

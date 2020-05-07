@@ -17,7 +17,8 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item"><a href="" class="nav__link">Главная</a></li>
-              <li class="nav__item"><a href="" class="nav__link">Авторизоваться</a></li>
+              <li class="nav__item"><a href="./article.html" class="nav__link">Сохраненные статьи</a></li>
+              <li class="nav__item"><button class="nav__button">Авторизоваться</button></li>
             </ul>
           </nav>
         </div>
@@ -38,6 +39,17 @@
   </section>
 
   <section class="main">
+
+    <div class="loading">
+      <i class="loading__circle-preloader"></i>
+      <p class="loading__text">Идет поиск новостей...</p>
+    </div>
+
+    <div class="search-failed">
+      <img src="<%=require('./images/not-found_v1.png').default%>" alt="Не удалось найти новости" class="search-failed__image">
+      <h4 class="search-failed__title">Ничего не найдено</h4>
+      <p class="search-failed__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
+    </div>
 
     <div class="result">
       <div class="result__container">
@@ -85,6 +97,99 @@
           </div>
         </div>
         <button class="result__show-more">Показать еще</button>
+      </div>
+    </div>
+
+    <div class="about">
+      <div class="about__content">
+        <img src="<%=require('./images/test_image.jpg').default%>" alt="" class="about__image">
+        <div class="about__container">
+          <h3 class="about__title">Об авторе</h3>
+          <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать,
+            как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+          <p class="about__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
+            и чем можете помочь потенциальным заказчикам.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer__container">
+        <p class="footer__text">&COPY; 2020 Supersite, Powered by News API</p>
+        <div class="footer__navigation">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="" class="nav__link nav__link_theme_white">Главная</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link nav__link_theme_white">Яндекс.Практикум</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link nav__link_theme_white">
+                  <img src="<%=require('./images/github.svg').default%>" alt="" class="nav__image">
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link nav__link_theme_white">
+                  <img src="<%=require('./images/fb.svg').default%>" alt="" class="nav__image">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="signin">
+      <div class="popup__content">
+        <img src="<%=require('./images/back.svg').default%>" alt="" class="popup__close">
+        <h3 class="popup__title">Вход</h3>
+        <form action="" class="popup__form">
+          <p class="popup__input-type">Email</p>
+          <input type="text" name="email" class="popup__input" placeholder="Введите почту">
+          <p class="popup__error">Недопустимый формат email</p>
+          <p class="popup__input-type">Пароль</p>
+          <input type="text" name="password" class="popup__input" placeholder="Введите пароль">
+          <p class="popup__error popup__error_position">Недопустимый формат пароля</p>
+          <button class="popup__button">Войти</button>
+        </form>
+        <div class="popup__container">
+          <p class="popup__text">или</p>
+          <button class="popup__button-link">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="signup">
+      <div class="popup__content">
+        <img src="<%=require('./images/back.svg').default%>" alt="" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form action="" class="popup__form">
+          <p class="popup__input-type">Email</p>
+          <input type="text" name="email" class="popup__input" placeholder="Введите почту">
+          <p class="popup__error">Недопустимый формат email</p>
+          <p class="popup__input-type">Пароль</p>
+          <input type="text" name="password" class="popup__input" placeholder="Введите пароль">
+          <p class="popup__error">Недопустимый формат пароля</p>
+          <p class="popup__input-type">Имя</p>
+          <input type="text" name="password" class="popup__input" placeholder="Введите своё имя">
+          <p class="popup__error popup__error_position">Недопустимое имя</p>
+          <p class="popup__error-server">Такой пользователь уже есть</p>
+          <button class="popup__button">Зарегистрироваться</button>
+        </form>
+        <div class="popup__container">
+          <p class="popup__text">или</p>
+          <button class="popup__button-link">Войти</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="signup-result">
+      <div class="popup__content">
+        <img src="<%=require('./images/back.svg').default%>" alt="" class="popup__close">
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+          <button class="popup__button-authorization">Выполнить вход</button>
       </div>
     </div>
 
