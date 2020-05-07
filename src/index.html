@@ -16,11 +16,17 @@
         <div class="header__navigation-container">
           <nav class="nav">
             <ul class="nav__list">
-              <li class="nav__item"><a href="" class="nav__link">Главная</a></li>
-              <li class="nav__item"><a href="./article.html" class="nav__link">Сохраненные статьи</a></li>
-              <li class="nav__item"><button class="nav__button">Авторизоваться</button></li>
+              <li class="nav__item">
+                <a href="./index.html" class="link link_active nav__link">Главная</a>
+              </li>
+              <li class="nav__item">
+                <a href="./article.html" class="link nav__link">Сохраненные статьи</a>
+              </li>
             </ul>
           </nav>
+          <button class="button header__button">Авторизоваться
+            <img src="<%=require('./images/logout.svg').default%>" alt="" class="header__button-image">
+          </button>
         </div>
       </div>
     </header>
@@ -31,7 +37,7 @@
         <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         <form action="" class="search__form">
           <input type="text" class="search__field" placeholder="Введите тему новости">
-          <buttom class="search__button">Найти</buttom>
+          <buttom class="button search__button">Искать</buttom>
         </form>
       </div>
     </div>
@@ -57,7 +63,7 @@
         <div class="result__cards">
           <div class="news-card">
             <div class="news-card__image">
-              <button class="news-card__save"></button>
+              <button class="button news-card__button"></button>
             </div>
             <div class="news-card__container">
               <p class="news-card__date">2 августа, 2019</p>
@@ -70,7 +76,7 @@
           </div>
           <div class="news-card">
             <div class="news-card__image">
-              <button class="news-card__save"></button>
+              <button class="button news-card__button"></button>
             </div>
             <div class="news-card__container">
               <p class="news-card__date">2 августа, 2019</p>
@@ -83,8 +89,8 @@
           </div>
           <div class="news-card">
             <div class="news-card__image">
-              <button class="news-card__authorization">Войдите, чтобы сохранять статьи</button>
-              <button class="news-card__save"></button>
+              <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
+              <button class="button news-card__button"></button>
             </div>
             <div class="news-card__container">
               <p class="news-card__date">2 августа, 2019</p>
@@ -96,7 +102,7 @@
             </div>
           </div>
         </div>
-        <button class="result__show-more">Показать еще</button>
+        <button class="button result__show-more">Показать еще</button>
       </div>
     </div>
 
@@ -120,18 +126,18 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="" class="nav__link nav__link_theme_white">Главная</a>
+                <a href="./index.html" class="link nav__link nav__link_theme_white">Главная</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link nav__link_theme_white">Яндекс.Практикум</a>
+                <a href="https://praktikum.yandex.ru/" target="_blank" class="link nav__link nav__link_theme_white">Яндекс.Практикум</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link nav__link_theme_white">
+                <a href="https://github.com/SFKhakimov" target="_blank" class="link nav__link nav__link_theme_white">
                   <img src="<%=require('./images/github.svg').default%>" alt="" class="nav__image">
                 </a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link nav__link_theme_white">
+                <a href="https://www.facebook.com/profile.php?id=100022969904084" target="_blank" class="link nav__link nav__link_theme_white">
                   <img src="<%=require('./images/fb.svg').default%>" alt="" class="nav__image">
                 </a>
               </li>
@@ -152,11 +158,11 @@
           <p class="popup__input-type">Пароль</p>
           <input type="text" name="password" class="popup__input" placeholder="Введите пароль">
           <p class="popup__error popup__error_position">Недопустимый формат пароля</p>
-          <button class="popup__button">Войти</button>
+          <button class="button popup__button">Войти</button>
         </form>
         <div class="popup__container">
           <p class="popup__text">или</p>
-          <button class="popup__button-link">Зарегистрироваться</button>
+          <button class="button popup__button-link">Зарегистрироваться</button>
         </div>
       </div>
     </div>
@@ -176,11 +182,11 @@
           <input type="text" name="password" class="popup__input" placeholder="Введите своё имя">
           <p class="popup__error popup__error_position">Недопустимое имя</p>
           <p class="popup__error-server">Такой пользователь уже есть</p>
-          <button class="popup__button">Зарегистрироваться</button>
+          <button class="button popup__button">Зарегистрироваться</button>
         </form>
         <div class="popup__container">
           <p class="popup__text">или</p>
-          <button class="popup__button-link">Войти</button>
+          <button class="button popup__button-link">Войти</button>
         </div>
       </div>
     </div>
@@ -189,7 +195,7 @@
       <div class="popup__content">
         <img src="<%=require('./images/back.svg').default%>" alt="" class="popup__close">
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-          <button class="popup__button-authorization">Выполнить вход</button>
+          <button class="button popup__button-authorization">Выполнить вход</button>
       </div>
     </div>
 
