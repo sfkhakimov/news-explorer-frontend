@@ -1,4 +1,4 @@
-.news-card__save {
+.news-card__button {
   background-image: url(../../../images/Rectangle_inactive.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -8,13 +8,12 @@
   top: 24px;
   right: 24px;
   border-radius: 8px;
-  border: none;
 }
 
-.news-card__save:hover {
+.news-card__button:hover {
   background-image: url(../../../images/Rectangle_active.png);
 }
 
-.news-card__save:active {
+.news-card__button:active {
   background-image: url(../../../images/Rectangle_saved.png);
 }
