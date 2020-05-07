@@ -1,11 +1,15 @@
 .search__button {
-  border-radius: 100px;
-  background: #2F71E5;
+  background-color: #2F71E5;
   position: absolute;
-  padding: 19px 54px 19px 54px;
+  padding: 21px 54px;
   font-size: 1.125em;
-  line-height: 1.5;
-  right: 0;
+  line-height: 24px;
+  top: -1px;
+  right: -1px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #FFF;
 }
 
 .search__button:hover {
