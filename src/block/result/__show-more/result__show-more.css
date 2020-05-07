@@ -1,5 +1,4 @@
 .result__show-more {
-  border: none;
   background-color: #FFF;
   border-radius: 80px;
   font-family: 'Roboto', sans-serif;
@@ -10,6 +9,7 @@
   padding: 18px 84px 22px;
   display: flex;
   align-self: center;
+  margin-top: 64px;
 }
 
 .result__show-more:hover {
