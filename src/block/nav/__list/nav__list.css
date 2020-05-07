@@ -1,3 +1,6 @@
+@import url(./_theme_white/nav__list_theme_white.css);
+
 .nav__list {
   display: flex;
+  align-items: center;
 }

@@ -1,13 +1,6 @@
 @import url(./_theme_white/nav__link_theme_white.css);
 
 .nav__link {
-  color: #FFF;
-  text-decoration: none;
+  color: #B6BCBF;
   font-size: 1.125em;
-  font-family: 'Roboto';
-}
-
-.nav__link:visited {
-  padding-bottom: 23px;
-  border-bottom: 2px solid #FFF;
 }
