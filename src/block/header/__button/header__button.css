@@ -16,3 +16,9 @@
     padding: 8px 15px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header__button {
+    align-self: flex-start;
+  }
+}

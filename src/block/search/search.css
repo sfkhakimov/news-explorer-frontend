@@ -12,3 +12,15 @@
   max-width: 1440px;
   margin: auto;
 }
+
+@media screen and (max-width: 767px) {
+  .search {
+    padding-top: 66px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .search {
+    padding-top: 56px;
+  }
+}

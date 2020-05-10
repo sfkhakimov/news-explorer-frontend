@@ -2,7 +2,7 @@
   border-radius: 100px;
   border: 1px solid #D1D2D6;
   width: 100%;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 1em;
   line-height: 1.37;
@@ -16,4 +16,10 @@
  .search__field {
    height: 56px;
  }
+}
+
+@media screen and (max-width: 426px) {
+  .search__field {
+    margin-bottom: 16px;
+  }
 }

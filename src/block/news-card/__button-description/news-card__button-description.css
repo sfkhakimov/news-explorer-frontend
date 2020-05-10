@@ -19,3 +19,11 @@
     padding: 14px 3px;
   }
 }
+
+@media screen and (max-width: 426px) {
+  .news-card__button-description {
+    top: 10px;
+    right: 65px;
+    padding: 14px 10px;
+  }
+}

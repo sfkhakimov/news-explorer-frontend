@@ -11,3 +11,9 @@
     align-items: center;
   }
 }
+
+@media screen and (max-width: 660px) {
+  .about__content {
+    flex-direction: column;
+  }
+}

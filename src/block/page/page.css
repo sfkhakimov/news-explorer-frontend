@@ -9,3 +9,10 @@
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash_1025px.jpg);
   }
 }
+
+@media screen and (max-width: 426px) {
+  .page {
+    height: 536px;
+    background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash_426.jpg);
+  }
+}

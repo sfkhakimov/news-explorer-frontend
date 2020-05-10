@@ -10,6 +10,7 @@
   font-style: normal;
   font-weight: 500;
   color: #FFF;
+  text-align: center;
 }
 
 .search__button:hover {
@@ -23,5 +24,11 @@
 @media screen and (max-width: 1025px) {
   .search__button {
     padding: 17px 50px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .search__button {
+    position: relative;
   }
 }

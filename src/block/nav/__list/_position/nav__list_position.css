@@ -1,0 +1,6 @@
+@media screen and (max-width: 767px) {
+  .nav__list.nav__list_position {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

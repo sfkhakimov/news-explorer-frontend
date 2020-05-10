@@ -7,3 +7,9 @@
   font-size: 1em;
   line-height: 22px;
 }
+
+@media screen and (max-width: 767px) {
+  .footer__text {
+    order: 1;
+  }
+}

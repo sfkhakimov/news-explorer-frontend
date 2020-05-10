@@ -1,7 +1,23 @@
 @import url(./_theme_white/nav__list_theme_white.css);
+@import url(./_position/nav__list_position.css);
 
 .nav__list {
   display: flex;
   align-items: center;
   padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .nav__list {
+    flex-wrap: wrap;
+  }
 }

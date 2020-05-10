@@ -14,23 +14,25 @@
   <section class="page">
 
     <header class="header">
-      <div class="header__container">
-        <p class="header__name-project">NewsExplorer</p>
-        <button class="button header__navigation-button"></button>
-        <div class="header__navigation-container">
-          <nav class="nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="./index.html" class="link link_active nav__link">Главная</a>
-              </li>
-              <li class="nav__item">
-                <a href="./article.html" class="link nav__link">Сохраненные статьи</a>
-              </li>
-            </ul>
-          </nav>
-          <button class="button header__button">Шакир
-            <img src="<%=require('./images/logout.svg').default%>" alt="" class="header__button-image">
-          </button>
+      <div class="header__content">
+        <div class="header__container">
+          <p class="header__name-project">NewsExplorer</p>
+          <button class="button header__navigation-button"></button>
+          <div class="header__navigation-container">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="./index.html" class="link link_active nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                  <a href="./article.html" class="link nav__link">Сохраненные статьи</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="button header__button">Шакир
+              <img src="<%=require('./images/logout.svg').default%>" alt="" class="header__button-image">
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -72,7 +74,9 @@
               </div>
               <div class="news-card__container">
                 <p class="news-card__date">2 августа, 2019</p>
-                <h3 class="news-card__title">Национальное достояние – парки</h3>
+                <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                </a>
                 <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
                    сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
                     где и сегодня каждый может приобщиться к природе.</p>
@@ -85,7 +89,9 @@
               </div>
               <div class="news-card__container">
                 <p class="news-card__date">2 августа, 2019</p>
-                <h3 class="news-card__title">Национальное достояние – парки</h3>
+                <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                </a>
                 <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
                    сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
                     где и сегодня каждый может приобщиться к природе.</p>
@@ -99,7 +105,9 @@
               </div>
               <div class="news-card__container">
                 <p class="news-card__date">2 августа, 2019</p>
-                <h3 class="news-card__title">Национальное достояние – парки</h3>
+                <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                </a>
                 <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
                    сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
                     где и сегодня каждый может приобщиться к природе.</p>
@@ -114,9 +122,7 @@
 
     <div class="about">
       <div class="about__content">
-        <picture class="about__picture">
-          <img src="<%=require('./images/about.jpg').default%>" alt="Фото автора" class="about__image">
-        </picture>
+        <img src="<%=require('./images/about.jpg').default%>" alt="Фото автора" class="about__image">
         <div class="about__container">
           <h3 class="about__title">Об авторе</h3>
           <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать,
@@ -139,6 +145,10 @@
               <li class="nav__item">
                 <a href="https://praktikum.yandex.ru/" target="_blank" class="link nav__link nav__link_theme_white">Яндекс.Практикум</a>
               </li>
+            </ul>
+          </nav>
+          <nav class="nav">
+            <ul class="nav__list nav__list_position">
               <li class="nav__item">
                 <a href="https://github.com/SFKhakimov" target="_blank" class="link nav__link nav__link_theme_white">
                   <img src="<%=require('./images/github.svg').default%>" alt="" class="nav__image">

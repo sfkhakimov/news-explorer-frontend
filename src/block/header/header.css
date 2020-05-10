@@ -3,6 +3,7 @@
 @import url(./__navigation-button/header__navigation-button.css);
 @import url(./__navigation-container/header____navigation-container.css);
 @import url(./_theme_white/header_theme_white.css);
+@import url(./_mobile/heder_mobile.css);
 @import url(./__button/header__button.css);
 @import url(./__button-image/header__button-image.css);
 
@@ -20,5 +21,18 @@
   .header {
     height: 66px;
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .header {
+    height: 56px;
   }
 }

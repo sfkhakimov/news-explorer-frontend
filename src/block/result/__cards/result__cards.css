@@ -12,3 +12,10 @@
     grid-gap: 8px 8px;
   }
 }
+
+@media screen and (max-width: 426px) {
+  .result__cards {
+    grid-template-columns: repeat(auto-fill, 288px);
+    grid-gap: 10px 10px;
+  }
+}

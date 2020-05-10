@@ -2,3 +2,10 @@
   width: 100%;
   position: relative;
 }
+
+@media screen and (max-width: 426px) {
+  .search__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
