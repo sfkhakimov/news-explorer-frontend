@@ -1,10 +1,18 @@
 .search__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: normal;
-  font-size: 3.75em;
-  line-height: 1.05;
+  font-size: 60px;
+  line-height: 64px;
   max-width: 600px;
   margin: 0;
-  padding-top: 80px;
   padding-bottom: 32px;
+}
+
+@media screen and (max-width: 1025px) {
+  .search__title {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 385px;
+    padding-bottom: 16px;
+  }
 }

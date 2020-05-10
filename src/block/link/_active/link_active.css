@@ -1,5 +1,11 @@
 .link_active {
   color: #FFF;
-  padding-bottom: 25px;
+  padding-bottom: 26px;
   border-bottom: 3px solid;
+}
+
+@media screen and (max-width: 1025px) {
+  .link_active {
+    padding-bottom: 22px;
+  }
 }

@@ -9,4 +9,11 @@
   height: 64px;
   box-sizing: border-box;
   padding-left: 20px;
+  outline:none;
+}
+
+@media screen and (max-width: 1025px) {
+ .search__field {
+   height: 56px;
+ }
 }

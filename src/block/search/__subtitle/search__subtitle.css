@@ -7,3 +7,9 @@
   margin: 0;
   padding-bottom: 64px;
 }
+
+@media screen and (max-width: 1025px) {
+  .search__subtitle {
+    padding-bottom: 48px;
+  }
+}

@@ -13,5 +13,15 @@
 }
 
 .search__button:hover {
-  cursor: pointer;
+  background-color: #347EFF;
+}
+
+.search__button:active {
+  background-color: #2A65CC
+}
+
+@media screen and (max-width: 1025px) {
+  .search__button {
+    padding: 17px 50px;
+  }
 }

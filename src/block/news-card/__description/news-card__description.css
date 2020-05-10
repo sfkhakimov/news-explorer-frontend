@@ -1,10 +1,19 @@
 .news-card__description {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
   line-height: 22px;
   color: #1A1B22;
   margin: 0;
-  padding-bottom: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 1025px) {
+  .news-card__description {
+  }
 }

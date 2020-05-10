@@ -2,8 +2,11 @@
 
 .nav__item {
   list-style-type: none;
-  margin-right: 44px;
+  margin-right: 32px;
 }
 
-.nav__item:last-of-type {
+@media screen and (max-width: 1025px) {
+  .nav__item {
+    margin-right: 16px;
+  }
 }

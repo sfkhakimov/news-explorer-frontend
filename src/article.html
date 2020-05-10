@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Сайт поиска новостей">
+  <meta name="author" content="Shakir Khakimov, s.f.khakimov@gmail.com">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.article.css %>">
 </head>
 <body>
@@ -32,14 +35,16 @@
     <section class="main">
 
       <div class="saved-articles">
-        <h2 class="saved-articles__title">Сохранённые статьи</h2>
-        <p class="saved-articles__subtitle">Шакир, у вас 5 сохранённых статей</p>
-        <p class="saved-articles__description">По ключевым словам:
-          <span class="saved-articles__keywrods">Природа,</span>
-          <span class="saved-articles__keywrods">тайга</span>
-          и
-          <span class="saved-articles__keywrods">2 другим</span>
-        </p>
+        <div class="saved-articles__container">
+          <h2 class="saved-articles__title">Сохранённые статьи</h2>
+          <p class="saved-articles__subtitle">Шакир, у вас 5 сохранённых статей</p>
+          <p class="saved-articles__description">По ключевым словам:
+            <span class="saved-articles__keywrods">Природа,</span>
+            <span class="saved-articles__keywrods">Тайга</span>
+            и
+            <span class="saved-articles__keywrods">2 другим</span>
+          </p>
+        </div>
       </div>
 
       <div class="result">
@@ -76,7 +81,6 @@
             <div class="news-card">
               <div class="news-card__image">
                 <p class="news-card__keywords">Природа</p>
-                <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
                 <button class="button news-card__button"></button>
               </div>
               <div class="news-card__container">

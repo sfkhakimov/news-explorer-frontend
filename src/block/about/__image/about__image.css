@@ -2,3 +2,10 @@
   border-radius: 1000px;
   width: 464px;
 }
+
+@media screen and (max-width: 1025px) {
+  .about__image {
+    width: 232px;
+    height: 232px;
+  }
+}

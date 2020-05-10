@@ -1,7 +1,4 @@
 .result__container {
-  display: flex;
-  flex-direction: column;
-  width: 86%;
   max-width: 1440px;
   margin: auto;
 }

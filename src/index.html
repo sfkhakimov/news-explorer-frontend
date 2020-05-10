@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сайт поиска новостей">
+  <meta name="author" content="Shakir Khakimov, s.f.khakimov@gmail.com">
   <title>NewsExplorer</title>
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
@@ -13,6 +16,7 @@
     <header class="header">
       <div class="header__container">
         <p class="header__name-project">NewsExplorer</p>
+        <button class="button header__navigation-button"></button>
         <div class="header__navigation-container">
           <nav class="nav">
             <ul class="nav__list">
@@ -24,7 +28,7 @@
               </li>
             </ul>
           </nav>
-          <button class="button header__button">Авторизоваться
+          <button class="button header__button">Шакир
             <img src="<%=require('./images/logout.svg').default%>" alt="" class="header__button-image">
           </button>
         </div>
@@ -59,56 +63,60 @@
 
     <div class="result">
       <div class="result__container">
-        <h2 class="result__title">Результаты поиска</h2>
-        <div class="result__cards">
-          <div class="news-card">
-            <div class="news-card__image">
-              <button class="button news-card__button"></button>
+        <div class="result__content">
+          <h2 class="result__title">Результаты поиска</h2>
+          <div class="result__cards">
+            <div class="news-card">
+              <div class="news-card__image">
+                <button class="button news-card__button"></button>
+              </div>
+              <div class="news-card__container">
+                <p class="news-card__date">2 августа, 2019</p>
+                <h3 class="news-card__title">Национальное достояние – парки</h3>
+                <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                   сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                    где и сегодня каждый может приобщиться к природе.</p>
+                <p class="news-card__source">Лента.ру</p>
+              </div>
             </div>
-            <div class="news-card__container">
-              <p class="news-card__date">2 августа, 2019</p>
-              <h3 class="news-card__title">Национальное достояние – парки</h3>
-              <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                 сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                  где и сегодня каждый может приобщиться к природе.</p>
-              <p class="news-card__source">Лента.ру</p>
+            <div class="news-card">
+              <div class="news-card__image">
+                <button class="button news-card__button"></button>
+              </div>
+              <div class="news-card__container">
+                <p class="news-card__date">2 августа, 2019</p>
+                <h3 class="news-card__title">Национальное достояние – парки</h3>
+                <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                   сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                    где и сегодня каждый может приобщиться к природе.</p>
+                <p class="news-card__source">Лента.ру</p>
+              </div>
+            </div>
+            <div class="news-card">
+              <div class="news-card__image">
+                <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
+                <button class="button news-card__button"></button>
+              </div>
+              <div class="news-card__container">
+                <p class="news-card__date">2 августа, 2019</p>
+                <h3 class="news-card__title">Национальное достояние – парки</h3>
+                <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                   сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                    где и сегодня каждый может приобщиться к природе.</p>
+                <p class="news-card__source">Лента.ру</p>
+              </div>
             </div>
           </div>
-          <div class="news-card">
-            <div class="news-card__image">
-              <button class="button news-card__button"></button>
-            </div>
-            <div class="news-card__container">
-              <p class="news-card__date">2 августа, 2019</p>
-              <h3 class="news-card__title">Национальное достояние – парки</h3>
-              <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                 сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                  где и сегодня каждый может приобщиться к природе.</p>
-              <p class="news-card__source">Лента.ру</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image">
-              <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
-              <button class="button news-card__button"></button>
-            </div>
-            <div class="news-card__container">
-              <p class="news-card__date">2 августа, 2019</p>
-              <h3 class="news-card__title">Национальное достояние – парки</h3>
-              <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                 сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                  где и сегодня каждый может приобщиться к природе.</p>
-              <p class="news-card__source">Лента.ру</p>
-            </div>
-          </div>
+          <button class="button result__show-more">Показать еще</button>
         </div>
-        <button class="button result__show-more">Показать еще</button>
       </div>
     </div>
 
     <div class="about">
       <div class="about__content">
-        <img src="<%=require('./images/test_image.jpg').default%>" alt="" class="about__image">
+        <picture class="about__picture">
+          <img src="<%=require('./images/about.jpg').default%>" alt="Фото автора" class="about__image">
+        </picture>
         <div class="about__container">
           <h3 class="about__title">Об авторе</h3>
           <p class="about__text">Это блок с описанием автора проекта. Здесь следует указать,
@@ -158,7 +166,7 @@
           <p class="popup__input-type">Пароль</p>
           <input type="text" name="password" class="popup__input" placeholder="Введите пароль">
           <p class="popup__error popup__error_position">Недопустимый формат пароля</p>
-          <button class="button popup__button">Войти</button>
+          <button class="button popup__button popup__button_active">Войти</button>
         </form>
         <div class="popup__container">
           <p class="popup__text">или</p>

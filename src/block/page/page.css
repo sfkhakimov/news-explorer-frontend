@@ -2,6 +2,10 @@
   background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
   background-size: cover;
   background-position: center;
-  height: 64vh;
-  max-height: 576px;
+}
+
+@media screen and (max-width: 1025px) {
+  .page {
+    background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash_1025px.jpg);
+  }
 }

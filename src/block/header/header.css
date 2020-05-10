@@ -1,5 +1,6 @@
 @import url(./__container/header__container.css);
 @import url(./__name-project/header__name-project.css);
+@import url(./__navigation-button/header__navigation-button.css);
 @import url(./__navigation-container/header____navigation-container.css);
 @import url(./_theme_white/header_theme_white.css);
 @import url(./__button/header__button.css);
@@ -10,8 +11,14 @@
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
-  font-size: 16px;
   height: 80px;
   background: rgba(196, 196, 196, 0.01);
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1025px) {
+  .header {
+    height: 66px;
+    font-size: 14px;
+  }
 }

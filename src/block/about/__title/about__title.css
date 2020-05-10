@@ -8,3 +8,10 @@
   margin: 0;
   padding-bottom: 24px;
 }
+
+@media screen and (max-width: 1025px) {
+  .about__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

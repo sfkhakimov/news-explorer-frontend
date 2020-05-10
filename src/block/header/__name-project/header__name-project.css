@@ -2,7 +2,8 @@
 
 .header__name-project {
   color: #FFF;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', sans-serif;
   font-size: 1.25em;
   line-height: 24px;
+  font-weight: bold;
 }

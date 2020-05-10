@@ -11,3 +11,9 @@
 .news-card {
   border-radius: 16px;
 }
+
+@media screen and (max-width: 1025px) {
+  .news-card {
+    max-height: 420px;
+  }
+}

@@ -4,3 +4,10 @@
   padding-top: 50px;
   padding-left: 56px;
 }
+
+@media screen and (max-width: 1025px) {
+  .about__container {
+    padding-left: 32px;
+    padding-top: 0px;
+  }
+}
