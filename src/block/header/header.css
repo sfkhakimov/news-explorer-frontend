@@ -6,6 +6,8 @@
 @import url(./_mobile/heder_mobile.css);
 @import url(./__button/header__button.css);
 @import url(./__button-image/header__button-image.css);
+@import url(./__mobile-input/header__mobile-input.css);
+@import url(./__mobile-button/header__mobile-button.css);
 
 .header {
   display: flex;
