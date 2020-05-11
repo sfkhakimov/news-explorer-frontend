@@ -2,11 +2,5 @@
   .header__navigation-container.header__navigation-container_mobile-active {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: #1A1B22;
-    padding: 66px 30px 30px;
   }
 }

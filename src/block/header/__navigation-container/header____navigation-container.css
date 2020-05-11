@@ -4,10 +4,13 @@
 .header__navigation-container {
   display: flex;
   align-self: center;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 @media screen and (max-width: 767px) {
   .header__navigation-container {
     display: none;
+    width: 90%;
   }
 }
