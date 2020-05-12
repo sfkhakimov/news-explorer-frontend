@@ -1,8 +1,9 @@
 .header.header_mobile {
-  height: 280px;
+  height: 286px;
   background-color: #1A1B22;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
   border-bottom: 0;
   transition: .4s;
+  z-index: 1;
 }

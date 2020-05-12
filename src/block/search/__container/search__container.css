@@ -9,7 +9,7 @@
 
 @media screen and (max-width: 1025px) {
   .search__container {
-    padding: 38px 0px;
+    padding: 38px 16px;
     max-width: 452px;
   }
 }

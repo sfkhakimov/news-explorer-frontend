@@ -9,12 +9,19 @@
   height: 64px;
   box-sizing: border-box;
   padding-left: 20px;
-  outline:none;
+  outline: none;
+  padding-right: 200px;
+
+}
+
+.search__field:focus {
+  border: 1px solid #2F71E5;
 }
 
 @media screen and (max-width: 1025px) {
  .search__field {
    height: 56px;
+   padding-right: 180px;
  }
 }
 

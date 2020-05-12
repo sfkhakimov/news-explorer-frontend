@@ -2,5 +2,6 @@
   .header__navigation-container.header__navigation-container_mobile-active {
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
   }
 }

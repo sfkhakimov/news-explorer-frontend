@@ -22,3 +22,11 @@
     align-self: flex-start;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .header__button {
+    align-self: auto;
+    justify-content: center;
+    padding: 12px 15px;
+  }
+}
