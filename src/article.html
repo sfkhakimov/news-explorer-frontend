@@ -14,27 +14,29 @@
   <div class="root">
 
     <header class="header header_theme_white">
-      <div class="header__content">
-        <div class="header__container header__container_theme_white">
-          <p class="header__name-project header__name-project_theme_white">NewsExplorer</p>
-          <input id="mobile-menu" type="checkbox" class="header__mobile-input">
-          <label for="mobile-menu" class="header__mobile-button header__mobile-button_theme_white"></label>
+      <div class="header__container">
+        <div class="header__content">
+          <div class="header__content-container">
+            <p class="header__name-project header__name-project_theme_white">NewsExplorer</p>
+            <input id="mobile-menu" type="checkbox" class="header__mobile-input">
+            <label for="mobile-menu" class="header__mobile-button header__mobile-button_theme_white"></label>
+          </div>
         </div>
-      </div>
-      <div class="header__navigation-container header__navigation-container_theme_white">
-        <nav class="nav nav_theme_white">
-          <ul class="nav__list nav__list_theme_white">
-            <li class="nav__item nav__item_theme_white">
-              <a href="./index.html" class="link nav__link nav__link_theme_white">Главная</a>
-            </li>
-            <li class="nav__item">
-              <a href="./article.html" class="link link_active nav__link nav__link_theme_white">Сохраненные статьи</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="button header__button header__button_theme_white">Шакир
-          <img src="<%=require('./images/logout_dark.svg').default%>" alt="Выйти" class="header__button-image">
-        </button>
+        <div class="header__navigation-container">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="./index.html" class="link nav__link nav__link_theme_white">Главная</a>
+              </li>
+              <li class="nav__item">
+                <a href="./article.html" class="link link_active nav__link nav__link_theme_white">Сохраненные статьи</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="button header__button header__button_theme_white">Шакир
+            <img src="<%=require('./images/logout_dark.svg').default%>" alt="Выйти" class="header__button-image">
+          </button>
+        </div>
       </div>
     </header>
 
@@ -64,7 +66,9 @@
                 </div>
                 <div class="news-card__container">
                   <p class="news-card__date">2 августа, 2019</p>
-                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                    <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  </a>
                   <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
                      сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
                       где и сегодня каждый может приобщиться к природе.</p>
@@ -78,7 +82,9 @@
                 </div>
                 <div class="news-card__container">
                   <p class="news-card__date">2 августа, 2019</p>
-                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                    <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  </a>
                   <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
                      сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
                       где и сегодня каждый может приобщиться к природе.</p>
@@ -92,7 +98,9 @@
                 </div>
                 <div class="news-card__container">
                   <p class="news-card__date">2 августа, 2019</p>
-                  <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                    <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  </a>
                   <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
                      сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
                       где и сегодня каждый может приобщиться к природе.</p>
