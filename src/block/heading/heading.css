@@ -1,17 +1,18 @@
-.page {
+.heading {
   background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.jpg);
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 @media screen and (max-width: 1025px) {
-  .page {
+  .heading {
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash_1025px.jpg);
   }
 }
 
 @media screen and (max-width: 426px) {
-  .page {
+  .heading {
     height: 536px;
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash_426.jpg);
   }

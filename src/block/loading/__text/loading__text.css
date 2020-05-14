@@ -9,3 +9,9 @@
   padding-top: 190px;
   color: #B6BCBF;
 }
+
+@media screen and (max-width: 767px) {
+  .loading__text {
+    padding-top: 150px;
+  }
+}

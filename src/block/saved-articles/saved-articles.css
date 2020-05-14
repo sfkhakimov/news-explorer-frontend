@@ -8,3 +8,9 @@
   max-width: 1440px;
   margin: auto;
 }
+
+@media screen and (max-width: 767px) {
+  .saved-articles {
+    padding-top: 66px;
+  }
+}

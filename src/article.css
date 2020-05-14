@@ -1,7 +1,6 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
 @import url(./block/button/button.css);
-@import url(./block/page/page.css);
 @import url(./block/link/link.css);
 @import url(./block/header/header.css);
 @import url(./block/nav/nav.css);
@@ -10,3 +9,4 @@
 @import url(./block/result/result.css);
 @import url(./block/news-card/news-card.css);
 @import url(./block/footer/footer.css);
+@import url(./block/overlay/overlay.css);

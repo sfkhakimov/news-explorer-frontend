@@ -1,0 +1,7 @@
+.header__mobile-button.header__mobile-button_theme_white::after {
+  background: #000;
+}
+
+.header__mobile-button.header__mobile-button_theme_white::before {
+  background: #000;
+}

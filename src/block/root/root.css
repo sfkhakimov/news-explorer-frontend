@@ -1,1 +1,3 @@
-@import url(./root_overlay/root_overlay.css);
+.root {
+  position: relative;
+}
