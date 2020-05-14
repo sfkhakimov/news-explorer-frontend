@@ -1,20 +1,22 @@
-@import url(./_theme_white/header__container_theme_white.css);
-
 .header__container {
   width: 86%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (min-width: 1440px) {
   .header__container {
-    width: 90%;
+    width: 1440px;
+    padding: 0px 104px;
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 767px) {
   .header__container {
-    margin: 0 auto;
+    flex-direction: column;
+    width: 100%;
   }
 }
