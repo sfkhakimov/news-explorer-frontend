@@ -11,7 +11,7 @@
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 767px) {
   .header__content-container {
     margin: 0 auto;
   }
