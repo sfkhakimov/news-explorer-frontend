@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode production",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
+    "build": "rimraf dist && webpack --config webpack.production.config.js",
+    "dev": "webpack-dev-server --config webpack.development.config.js --open --watch",
     "deploy": "gh-pages -d dist"
   },
   "repository": {

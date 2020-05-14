@@ -4,10 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const isDev = process.env.NODE_ENV === 'development';
-const webpack = require('webpack');
-
 module.exports = {
+  mode: 'production',
   entry: {
     main: './src/index.js',
     article: './src/saved-articles/index.js',
@@ -18,15 +16,15 @@ module.exports = {
   },
   module: {
     rules: [
-      (isDev ? {} : {
+      {
         test: /\.js/,
         use: { loader: 'babel-loader' },
         exclude: /node_modules/,
-      }),
+      },
       {
         test: /\.css$/,
         use: [
-          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
         ],
@@ -68,8 +66,5 @@ module.exports = {
       filename: 'article.html',
     }),
     new WebpackMd5Hash(),
-    new webpack.DefinePlugin({
-      'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
   ],
 };
