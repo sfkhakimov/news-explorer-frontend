@@ -1,36 +1,51 @@
 export default class Popup {
-  constructor(popupClose, replace, root, openedPopup, popupIsOpened) {
-    this.popupClose = popupClose;
-    this.replace = replace;
-    this.root = root;
-    this.openedPopup = openedPopup;
-    this.popupIsOpened = popupIsOpened;
-    this._close = this.close.bind(this);
-    this._open = this.open.bind(this);
-    this._setHandler = this.setHandler.bind(this);
-    this._removeHandler = this.removeHandler.bind(this);
+  constructor(obj, form) {
+    this.form = form;
+    this.popupClose = obj.POPUP_CLOSE;
+    this.replace = obj.POPUP_REPLACE;
+    this.root = obj.ROOT;
+    this.openedPopup = obj.POPUP;
+    this.signInPopup = obj.SIGNIN_POPUP;
+    this.signUpPopup = obj.SIGNUP_POPUP;
+    this.resultPopup = obj.RESULT_POPUP;
+    this.buttonSignUp = obj.BUTTON_SIGNUP;
+    this.buttonSignIn = obj.BUTTON_SIGNIN;
+    this.open = this.open.bind(this);
+    this.setContent = this.setContent.bind(this);
+    this.close = this.close.bind(this);
+    this._setHandlers = this._setHandlers.bind(this);
+    this.change = this.change.bind(this);
   }
 
-  open(elem) {
-    document.querySelector(`#${elem}`).classList.add(this.popupIsOpened);
-    //this._setHandler();
+  setContent(elem) {
+    document.querySelector(`.${this.root}`)
+      .append(document.querySelector(`#${elem}`)
+        .content.cloneNode(true));
+    this._setHandlers();
+    this.form._setHandlers();
+  }
+
+  open() {
+    this.setContent(this.signInPopup);
   }
 
   close() {
-    if (event.target.classList.contains(this.popupClose) || event.target.classList.contains(this.replace)) {
-      //this._removeHandler();
-      document.querySelector(`.${this.popupIsOpened}`)
-        .classList.remove(this.popupIsOpened);
+    document.querySelector(`.${this.openedPopup}`).remove();
+    if (event.target.classList.contains(this.replace)) {
+      this.change();
     }
   }
 
-  setHandler() {
-    document.querySelector(`.${this.popupIsOpened}`)
-      .addEventListener('click', this._close);
+  change() {
+    if (event.target.id === this.buttonSignUp) {
+      this.setContent(this.signUpPopup);
+    } else {
+      this.setContent(this.signInPopup);
+    }
   }
 
-  removeHandler() {
-    document.querySelector(`.${this.popupIsOpened}`)
-      .removeEventListener('click', this._close);
+  _setHandlers() {
+    document.querySelector(`.${this.popupClose}`).addEventListener('click', this.close);
+    document.querySelector(`.${this.replace}`).addEventListener('click', this.close);
   }
 }
