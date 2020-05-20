@@ -2,7 +2,7 @@ import Popup from './Popup';
 
 export default class SignInPopup extends Popup {
   constructor(headerButton, signInPopup, buttonSignIn, popup) {
-    super(popup.popupClose, popup.replace, popup.root, popup.openedPopup, popup.popupIsOpened);
+    super(popup.popupClose, popup.replace, popup.root, popup.openedPopup);
     this.headerButton = headerButton;
     this.signInPopup = signInPopup;
     this.buttonSignIn = buttonSignIn;
@@ -10,10 +10,15 @@ export default class SignInPopup extends Popup {
 
   open() {
     super.open(this.signInPopup);
+    this._setHandlers();
   }
 
-  _handler() {
-    document.querySelector(`.${this.headerButton}`).addEventListener('click', this.open.bind(this));
-    document.querySelector(`#${this.buttonSignIn}`).addEventListener('click', this.open.bind(this));
+  close() {
+    super.close();
+  }
+
+  _setHandlers() {
+    document.querySelector(`.${this.popupClose}`).addEventListener('click', this.close);
+    document.querySelector(`.${this.replace}`).addEventListener('click', this.close);
   }
 }
