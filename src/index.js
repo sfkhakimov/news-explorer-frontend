@@ -2,8 +2,8 @@ import './style.css';
 
 import Form from './js/components/Form';
 import Popup from './js/components/Popup';
-import SignInPopup from './js/components/SignInPopup';
-import SignUpPopup from './js/components/SignUpPopup';
+import MainApi from './js/api/MainApi';
+import Header from './js/components/Header';
 
 import {
   POPUP_CLOSE,
@@ -29,7 +29,47 @@ import {
   ERROR_REQUIRED,
 } from './js/constants/form';
 
+import {
+  MOBILE_INPUT,
+  NAVIGATION_CONTAINER,
+  NAVIGATION_CONTAINER_ACTIVE,
+  HEADER,
+  HEADER_MOBILE,
+  OVERLAY,
+  OVERLAY_ACTIVE,
+  HEADER_BUTTON_IMAGE,
+  HEADER_ARTICLE,
+  NAV_ITEM_DISPLAY_NONE,
+} from './js/constants/header';
+
+import {
+  URL,
+  HEADERS,
+  COOKIE,
+} from './js/constants/main-api';
+
 const module = (function () {
+
+  const mainApi = new MainApi({
+    baseUrl: URL,
+    headers: HEADERS,
+    credentials: COOKIE,
+  });
+
+  const header = new Header({
+    MOBILE_INPUT,
+    NAVIGATION_CONTAINER,
+    NAVIGATION_CONTAINER_ACTIVE,
+    HEADER,
+    HEADER_MOBILE,
+    OVERLAY,
+    OVERLAY_ACTIVE,
+    HEADER_BUTTON,
+    HEADER_BUTTON_IMAGE,
+    HEADER_ARTICLE,
+    NAV_ITEM_DISPLAY_NONE,
+  }, mainApi);
+
   const popup = new Popup({
     POPUP_CLOSE,
     POPUP_REPLACE,
@@ -40,6 +80,7 @@ const module = (function () {
     RESULT_POPUP,
     BUTTON_SIGNUP,
     BUTTON_SIGNIN,
+    POPUP_BUTTON,
   },
   new Form({
     ERROR_TYPE,
@@ -50,22 +91,18 @@ const module = (function () {
     BUTTON_ACTIVE,
     POPUP_BUTTON,
     ERROR_REQUIRED,
-  }));
-  // const signInPopup = new SignInPopup(HEADER_BUTTON, SIGNIN_POPUP, BUTTON_SIGNIN, popup);
-  // const signUpPopup = new SignUpPopup(SIGNUP_POPUP, BUTTON_SIGNUP, popup);
+  }), header, mainApi);
 
+
+  header._setHndlers();
   document.querySelector(`.${HEADER_BUTTON}`).addEventListener('click', popup.open);
 
+  mainApi.getUserData()
+    .then((res) => {
+      header.render(res.user.name);
+    })
+    .catch((err) => {
+      header.render();
+    });
 
-  document.querySelector('.header__mobile-input').addEventListener('click', (event) => {
-    if (!document.querySelector('.header__navigation-container').classList.contains('header__navigation-container_mobile-active')) {
-      document.querySelector('.header__navigation-container').classList.add('header__navigation-container_mobile-active');
-      document.querySelector('.header').classList.add('header_mobile');
-      document.querySelector('.overlay').classList.add('overlay_active');
-    } else {
-      document.querySelector('.header__navigation-container').classList.remove('header__navigation-container_mobile-active');
-      document.querySelector('.header').classList.remove('header_mobile');
-      document.querySelector('.overlay').classList.remove('overlay_active');
-    }
-  });
 }());
