@@ -10,7 +10,12 @@ export default class Form {
     this.buttonActive = obj.BUTTON_ACTIVE;
     this._setHandlers = this._setHandlers.bind(this);
     this._validateForm = this._validateForm.bind(this);
+    this.setServerError = this.setServerError.bind(this);
     this._validateInputElement = this._validateInputElement.bind(this);
+  }
+
+  setServerError(error) {
+    document.querySelector(`.${this.errorServer}`).textContent = error;
   }
 
   _validateInputElement() {
