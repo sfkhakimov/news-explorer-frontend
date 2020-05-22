@@ -30,14 +30,12 @@
                 <li class="nav__item">
                   <a href="./index.html" class="link link_active nav__link">Главная</a>
                 </li>
-                <li class="nav__item">
+                <li id="nav-item-article" class="nav__item nav__item_display_none">
                   <a href="./article.html" class="link nav__link">Сохраненные статьи</a>
                 </li>
               </ul>
             </nav>
-            <button class="button header__button">Авторизоваться
-              <!-- <img src="<%=require('./images/logout.svg').default%>" alt="Выйти" class="header__button-image"> -->
-            </button>
+            <button class="button header__button"></button>
           </div>
         </div>
       </header>
@@ -172,18 +170,23 @@
 
     </section>
 
+    <template id="header-button-image">
+      <img src="<%=require('./images/logout.svg').default%>" alt="Выйти" class="header__button-image">
+    </template>
+
     <template id="signin">
       <div class="popup popup_is-opened">
         <div class="popup__content">
           <img src="<%=require('./images/back.svg').default%>" alt="Закрыть форму" class="popup__close">
           <h3 class="popup__title">Вход</h3>
-          <form class="popup__form" novalidate>
+          <form class="popup__form" id="authorization" novalidate>
             <p class="popup__input-type">Email</p>
             <input id="email" type="email" name="email" class="popup__input" placeholder="Введите почту" required>
             <p id="error-email" class="popup__error"></p>
             <p class="popup__input-type">Пароль</p>
             <input id="password" type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
             <p id="error-password" class="popup__error popup__error_position"></p>
+            <p class="popup__error-server"></p>
             <button type="submit" class="button popup__button" disabled>Войти</button>
           </form>
           <div class="popup__container">
@@ -199,7 +202,7 @@
         <div class="popup__content">
           <img src="<%=require('./images/back.svg').default%>" alt="Закрыть форму" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
-          <form class="popup__form" novalidate>
+          <form class="popup__form" id="registration" novalidate>
             <p class="popup__input-type">Email</p>
             <input id="email" type="email" name="email" class="popup__input" placeholder="Введите почту" required>
             <p id="error-email" class="popup__error"></p>
@@ -209,7 +212,7 @@
             <p class="popup__input-type">Имя</p>
             <input id="name" type="text" name="name" class="popup__input" placeholder="Введите своё имя" required minlength="2" maxlength="30">
             <p id="error-name" class="popup__error popup__error_position"></p>
-            <p class="popup__error-server">Такой пользователь уже есть</p>
+            <p class="popup__error-server"></p>
             <button type="submit" class="button popup__button" disabled>Зарегистрироваться</button>
           </form>
           <div class="popup__container">

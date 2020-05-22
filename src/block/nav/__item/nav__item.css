@@ -1,3 +1,5 @@
+@import url(./_display_none/nav__item_display_none.css);
+
 .nav__item {
   list-style-type: none;
   margin-right: 32px;
