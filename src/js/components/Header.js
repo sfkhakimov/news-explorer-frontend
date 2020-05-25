@@ -1,5 +1,5 @@
 export default class Header {
-  constructor(obj, api) {
+  constructor(obj, api, authorization, newsCardList) {
     this.email = null;
     this.password = null;
     this.logged = false;
@@ -15,6 +15,8 @@ export default class Header {
     this.headerArticle = obj.HEADER_ARTICLE;
     this.navItemDisplay = obj.NAV_ITEM_DISPLAY_NONE;
     this.api = api;
+    this.newsCardList = newsCardList;
+    this.authorization = authorization;
     this.mobileMenu = this.mobileMenu.bind(this);
     this.render = this.render.bind(this);
     this.rememberUser = this.rememberUser.bind(this);
@@ -24,17 +26,18 @@ export default class Header {
 
   render(name) {
     if (name !== undefined) {
-      this.logged = true;
+      this.authorization.login = true;
       document.querySelector(`.${this.headerButton}`).textContent = name;
       document.querySelector(`.${this.headerButton}`)
         .append(document.querySelector(`#${this.imageButton}`)
           .content.cloneNode(true));
       document.querySelector(`#${this.headerArticle}`).classList.remove(this.navItemDisplay);
     } else {
-      this.logged = false;
+      this.authorization.login = false;
       document.querySelector(`.${this.headerButton}`).textContent = 'Авторизоваться';
       document.querySelector(`#${this.headerArticle}`).classList.add(this.navItemDisplay);
     }
+    this.newsCardList.redrawCard();
   }
 
   rememberUser(email, password) {

@@ -1,23 +1,13 @@
-const MOBILE_INPUT = 'header__mobile-input';
-const NAVIGATION_CONTAINER = 'header__navigation-container';
-const NAVIGATION_CONTAINER_ACTIVE = 'header__navigation-container_mobile-active';
-const HEADER = 'header';
-const HEADER_MOBILE = 'header_mobile';
-const OVERLAY = 'overlay';
-const OVERLAY_ACTIVE = 'overlay_active';
-const NAV_ITEM_DISPLAY_NONE = 'nav__item_display_none';
-const HEADER_ARTICLE = 'nav-item-article';
-const HEADER_BUTTON_IMAGE = 'header-button-image';
-
-export {
-  MOBILE_INPUT,
-  NAVIGATION_CONTAINER,
-  NAVIGATION_CONTAINER_ACTIVE,
-  HEADER,
-  HEADER_MOBILE,
-  OVERLAY,
-  OVERLAY_ACTIVE,
-  HEADER_BUTTON_IMAGE,
-  HEADER_ARTICLE,
-  NAV_ITEM_DISPLAY_NONE,
+export default {
+  MOBILE_INPUT: 'header__mobile-input',
+  NAVIGATION_CONTAINER: 'header__navigation-container',
+  NAVIGATION_CONTAINER_ACTIVE: 'header__navigation-container_mobile-active',
+  HEADER: 'header',
+  HEADER_MOBILE: 'header_mobile',
+  OVERLAY: 'overlay',
+  OVERLAY_ACTIVE: 'overlay_active',
+  NAV_ITEM_DISPLAY_NONE: 'nav__item_display_none',
+  HEADER_ARTICLE: 'nav-item-article',
+  HEADER_BUTTON_IMAGE: 'header-button-image',
+  HEADER_BUTTON: 'header__button',
 };
