@@ -19,16 +19,8 @@ export default class MainApi {
         password: userPassword,
       }),
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw res;
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
-      });
+      .then((res) => res.json())
+      .catch((err) => Promise.reject(err));
   }
 
   signup(userEmail, userPassword, userName) {
@@ -42,16 +34,8 @@ export default class MainApi {
         name: userName,
       }),
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw res;
-      })
-      .catch((err) => {
-        console.log(err);
-        throw err;
-      });
+      .then((res) => res.json())
+      .catch((err) => Promise.reject(err));
   }
 
   getUserData() {
@@ -60,14 +44,31 @@ export default class MainApi {
       credentials: this.credentials,
     })
       .then((res) => {
-        if (!res.ok) {
-          throw Error();
+        if (res.ok) {
+          return res.json();
         }
-        return res.json();
+        return Promise.reject(res);
       })
-      .catch((err) => {
-        throw err;
-      });
+      .catch((err) => Promise.reject(err));
+  }
+
+  createArticle(article) {
+    return fetch((`${this.baseUrl}/articles`), {
+      method: 'POST',
+      headers: this.headers,
+      credentials: this.credentials,
+      body: JSON.stringify({
+        keyword: article.key,
+        title: article.title,
+        text: article.text,
+        date: article.date,
+        source: article.source,
+        link: article.link,
+        image: article.image,
+      }),
+    })
+      .then((res) => res.json())
+      .catch((err) => Promise.reject(err));
   }
 
   logout() {
@@ -77,11 +78,11 @@ export default class MainApi {
       credentials: this.credentials,
     })
       .then((res) => {
-        if (!res.ok) {
-          throw Error();
+        if (res.ok) {
+          return res.json();
         }
-        return res.json();
+        return Promise.reject(res);
       })
-      .catch((err) => err);
+      .catch((err) => Promise.reject(err));
   }
 }
