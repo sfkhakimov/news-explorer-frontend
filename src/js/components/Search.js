@@ -1,6 +1,6 @@
 export default class Search {
-  constructor(obj, newsApi, newsCardList) {
-    this.searchForm = obj.SEARCH_FORM;
+  constructor(SEARCH_FORM, newsApi, newsCardList) {
+    this.searchForm = SEARCH_FORM;
     this.newsApi = newsApi;
     this.newsCardList = newsCardList;
     this.searchNews = this.searchNews.bind(this);
