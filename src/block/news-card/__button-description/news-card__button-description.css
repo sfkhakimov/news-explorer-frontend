@@ -10,6 +10,7 @@
   position: absolute;
   top: 24px;
   right: 70px;
+  display: none;
 }
 
 @media screen and (max-width: 1025px) {

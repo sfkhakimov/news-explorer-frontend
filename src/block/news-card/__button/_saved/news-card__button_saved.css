@@ -1,0 +1,7 @@
+.news-card__button.news-card__button_saved {
+  background-image: url(../../../../images/Rectangle_saved.png);
+}
+
+.news-card__button.news-card__button_saved:hover {
+  background-image: url(../../../../images/Rectangle_saved.png);
+}

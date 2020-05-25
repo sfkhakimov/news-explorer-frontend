@@ -7,7 +7,6 @@
 
 @media screen and (max-width: 1025px) {
   .news-card__container {
-    max-height: 270px;
     padding: 16px;
   }
 }
