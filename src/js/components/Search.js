@@ -1,54 +1,35 @@
 export default class Search {
-  constructor(obj, newsApi) {
+  constructor(obj, newsApi, newsCardList) {
     this.searchForm = obj.SEARCH_FORM;
-    this.loading = obj.LOADING;
-    this.loadingActive = obj.LOADING_ACTIVE;
-    this.searchFailed = obj.SEARCH_FAILED;
-    this.searchFailedActive = obj.SEARCH_FAILED_ACTIVE;
     this.newsApi = newsApi;
+    this.newsCardList = newsCardList;
     this.searchNews = this.searchNews.bind(this);
-    this.download = this.download.bind(this);
-    this.uploaded = this.uploaded.bind(this);
-    this.searchErrorSetting = this.searchErrorSetting.bind(this);
-    this.searchErrorRemove = this.searchErrorRemove.bind(this);
     this._setHandlers = this._setHandlers.bind(this);
   }
 
   searchNews() {
     event.preventDefault();
-    if (document.querySelector(`.${this.searchFailed}`).classList.contains(this.searchFailedActive)) {
-      this.searchErrorRemove();
-    }
-    this.download();
+    this.newsCardList.searchErrorRemove();
+    this.newsCardList.download();
     const form = document.querySelector(`.${this.searchForm}`);
     this.newsApi.getNews(form.elements.search.value)
       .then((res) => {
         if (res.articles.length === 0) {
           throw res;
         }
-        this.uploaded();
-        console.log(res);
+        this.newsCardList.counter = 0;
+        this.newsCardList.articles = res.articles;
+        this.newsCardList.addedArticles = [];
+        this.newsCardList.key = form.elements.search.value;
+        this.newsCardList.removeResult();
+        this.newsCardList.buttonShow();
+        this.newsCardList.uploaded();
+        this.newsCardList.addCard();
       })
       .catch((err) => {
-        this.uploaded();
-        this.searchErrorSetting();
+        this.newsCardList.uploaded();
+        this.newsCardList.searchErrorSetting();
       });
-  }
-
-  download() {
-    document.querySelector(`.${this.loading}`).classList.add(this.loadingActive);
-  }
-
-  uploaded() {
-    document.querySelector(`.${this.loading}`).classList.remove(this.loadingActive);
-  }
-
-  searchErrorSetting() {
-    document.querySelector(`.${this.searchFailed}`).classList.add(this.searchFailedActive);
-  }
-
-  searchErrorRemove() {
-    document.querySelector(`.${this.searchFailed}`).classList.remove(this.searchFailedActive);
   }
 
   _setHandlers() {
