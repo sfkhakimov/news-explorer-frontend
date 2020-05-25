@@ -71,52 +71,6 @@
           <div class="result__content">
             <div class="result__cards">
               <h2 class="result__title">Результаты поиска</h2>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
             </div>
             <button class="button result__show-more">Показать еще</button>
           </div>
@@ -169,6 +123,21 @@
       </div>
 
     </section>
+
+    <template id="news-card">
+        <div class="news-card__image">
+          <button class="button news-card__button"></button>
+          <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
+        </div>
+        <div class="news-card__container">
+          <p class="news-card__date"></p>
+          <a href="" class="link" target="_blank">
+            <h3 class="news-card__title"></h3>
+          </a>
+          <p class="news-card__description"></p>
+          <p class="news-card__source"></p>
+        </div>
+    </template>
 
     <template id="header-button-image">
       <img src="<%=require('./images/logout.svg').default%>" alt="Выйти" class="header__button-image">
@@ -228,7 +197,7 @@
         <div class="popup__content">
           <img src="<%=require('./images/back.svg').default%>" alt="Закрыть форму" class="popup__close">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-            <button type="submit" class="button popup__button-authorization">Выполнить вход</button>
+            <button type="submit" class="button popup__button-link popup__button-authorization">Выполнить вход</button>
         </div>
       </div>
     </template>
