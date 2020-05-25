@@ -36,6 +36,9 @@ export default class Header {
       this.authorization.login = false;
       document.querySelector(`.${this.headerButton}`).textContent = 'Авторизоваться';
       document.querySelector(`#${this.headerArticle}`).classList.add(this.navItemDisplay);
+      if (window.location.pathname !== '/index.html') {
+        window.location.href = '../../index.html';
+      }
     }
     this.newsCardList.redrawCard();
   }
