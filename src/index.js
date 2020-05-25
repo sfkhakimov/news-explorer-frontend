@@ -15,7 +15,7 @@ import formattingDate from './js/utils/formattingDate';
 import popupObj from './js/constants/popup';
 import formObj from './js/constants/form';
 import headerObj from './js/constants/header';
-import { SEARCH_FORM } from './js/constants/search';
+import SEARCH_FORM from './js/constants/search';
 import newsCardObj from './js/constants/news-card';
 import newsCardListObj from './js/constants/news-card-list';
 
@@ -50,9 +50,9 @@ import {
   const createCard = () => new NewsCard(newsCardObj, authorization, mainApi);
   const newsCardList = new NewsCardList(newsCardListObj, createCard);
   const header = new Header(headerObj, mainApi, authorization, newsCardList);
-  const popup = new Popup(popupObj, new Form(formObj), header, mainApi, authorization);
-
-  const search = new Search({ SEARCH_FORM }, newsApi, newsCardList);
+  const form = new Form(formObj);
+  const popup = new Popup(popupObj, form, header, mainApi, authorization);
+  const search = new Search(SEARCH_FORM, newsApi, newsCardList);
 
   newsCardList._setHandlers();
   search._setHandlers();
