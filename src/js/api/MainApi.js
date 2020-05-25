@@ -52,6 +52,30 @@ export default class MainApi {
       .catch((err) => Promise.reject(err));
   }
 
+  getArticles() {
+    return fetch((`${this.baseUrl}/articles`), {
+      headers: this.headers,
+      credentials: this.credentials,
+    })
+      .then((res) => res.json())
+      .catch((err) => Promise.reject(err));
+  }
+
+  removeArticle(articleId) {
+    return fetch((`${this.baseUrl}/articles/${articleId}`), {
+      method: 'DELETE',
+      headers: this.headers,
+      credentials: this.credentials,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(res);
+      })
+      .catch((err) => Promise.reject(err));
+  }
+
   createArticle(article) {
     return fetch((`${this.baseUrl}/articles`), {
       method: 'POST',
