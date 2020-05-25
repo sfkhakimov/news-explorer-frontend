@@ -23,7 +23,7 @@ export default class Header {
     this.render = this.render.bind(this);
     this.rememberUser = this.rememberUser.bind(this);
     this.output = this.output.bind(this);
-    this._setHndlers = this._setHndlers.bind(this);
+    this.setHndlers = this.setHndlers.bind(this);
   }
 
   render(name) {
@@ -67,12 +67,15 @@ export default class Header {
   output() {
     this.api.logout()
       .then((res) => {
-        this.render();
+        if (res.message === 'Необходима авторизация') {
+          Promise.reject(res);
+        }
+        return this.render();
       })
-      .catch((err) => err);
+      .catch((err) => alert(err.message));
   }
 
-  _setHndlers() {
+  setHndlers() {
     document.querySelector(`.${this.input}`).addEventListener('click', this.mobileMenu);
   }
 }

@@ -35,7 +35,7 @@ import {
   const header = new Header(headerObj, mainApi, authorization, newsCardList);
   const popup = new Popup(popupObj, form, header, mainApi, authorization);
 
-  header._setHndlers();
+  header.setHndlers();
   document.querySelector(`.${popupObj.HEADER_BUTTON}`).addEventListener('click', popup.open);
   mainApi.getUserData()
     .then((res) => {

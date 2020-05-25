@@ -29,7 +29,7 @@ export default class Popup {
       .append(document.querySelector(`#${elem}`)
         .content.cloneNode(true));
     this._setHandlers();
-    this.form._setHandlers();
+    this.form.setHandlers();
   }
 
   open() {

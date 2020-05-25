@@ -4,7 +4,7 @@ export default class Search {
     this.newsApi = newsApi;
     this.newsCardList = newsCardList;
     this.searchNews = this.searchNews.bind(this);
-    this._setHandlers = this._setHandlers.bind(this);
+    this.setHandlers = this.setHandlers.bind(this);
   }
 
   searchNews() {
@@ -32,7 +32,7 @@ export default class Search {
       });
   }
 
-  _setHandlers() {
+  setHandlers() {
     document.querySelector(`.${this.searchForm}`).addEventListener('submit', this.searchNews);
   }
 }

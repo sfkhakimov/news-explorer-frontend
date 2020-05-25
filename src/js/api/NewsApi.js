@@ -14,10 +14,8 @@ export default class NewsApi {
         if (res.ok) {
           return res.json();
         }
-        throw res;
+        Promise.reject(res);
       })
-      .catch((err) => {
-        throw err;
-      });
+      .catch((err) => Promise.reject(err));
   }
 }

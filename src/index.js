@@ -54,12 +54,17 @@ import {
   const popup = new Popup(popupObj, form, header, mainApi, authorization);
   const search = new Search(SEARCH_FORM, newsApi, newsCardList);
 
-  newsCardList._setHandlers();
-  search._setHandlers();
-  header._setHndlers();
+  newsCardList.setHandlers();
+  search.setHandlers();
+  header.setHndlers();
   document.querySelector(`.${popupObj.HEADER_BUTTON}`).addEventListener('click', popup.open);
 
   mainApi.getUserData()
-    .then((res) => header.render(res.user.name))
+    .then((res) => {
+      if (res.user.name === undefined) {
+        Promise.reject(res);
+      }
+      header.render(res.user.name);
+    })
     .catch((err) => header.render());
 }());

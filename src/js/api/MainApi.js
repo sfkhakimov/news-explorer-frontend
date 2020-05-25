@@ -43,12 +43,7 @@ export default class MainApi {
       headers: this.headers,
       credentials: this.credentials,
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res);
-      })
+      .then((res) => res.json())
       .catch((err) => Promise.reject(err));
   }
 
@@ -67,12 +62,7 @@ export default class MainApi {
       headers: this.headers,
       credentials: this.credentials,
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res);
-      })
+      .then((res) => res.json())
       .catch((err) => Promise.reject(err));
   }
 
@@ -101,12 +91,7 @@ export default class MainApi {
       headers: this.headers,
       credentials: this.credentials,
     })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(res);
-      })
+      .then((res) => res.json())
       .catch((err) => Promise.reject(err));
   }
 }

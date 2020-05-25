@@ -84,8 +84,8 @@ export default class NewsCard {
       image: this.articleData.urlToImage,
     })
       .then((article) => {
-        if (article.message) {
-          throw article;
+        if (article.message !== undefined) {
+          Promise.reject(article);
         }
         this.article.querySelector(`.${this.newsCardButton}`).classList.add(this.newsCardButtonSaved);
         this.article.querySelector(`.${this.newsCardButton}`).setAttribute('disabled', true);

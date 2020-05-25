@@ -20,12 +20,14 @@ export default class NewsCardList {
     this.uploaded = this.uploaded.bind(this);
     this.renderResult = this.renderResult.bind(this);
     this.addCard = this.addCard.bind(this);
+    this.addSavedArticles = this.addSavedArticles.bind(this);
     this.buttonHide = this.buttonHide.bind(this);
     this.removeResult = this.removeResult.bind(this);
     this.buttonShow = this.buttonShow.bind(this);
     this.redrawCard = this.redrawCard.bind(this);
     this.searchErrorSetting = this.searchErrorSetting.bind(this);
     this.searchErrorRemove = this.searchErrorRemove.bind(this);
+    this.setHandlers = this.setHandlers.bind(this);
   }
 
   renderResult(elem) {
@@ -45,7 +47,6 @@ export default class NewsCardList {
     this.articles.forEach((elem, index) => {
       if (index < this.counter) {
         if (!this.addedArticles.includes(elem)) {
-          console.log(elem);
           const aticle = this.createCard();
           this.renderResult(aticle.card(elem));
           aticle.keyWord = this.key;
@@ -98,7 +99,7 @@ export default class NewsCardList {
     document.querySelector(`.${this.searchFailed}`).classList.remove(this.searchFailedActive);
   }
 
-  _setHandlers() {
+  setHandlers() {
     document.querySelector(`.${this.resultButton}`).addEventListener('click', this.addCard);
   }
 }

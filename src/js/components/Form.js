@@ -9,7 +9,7 @@ export default class Form {
     this.popupButton = obj.POPUP_BUTTON;
     this.buttonActive = obj.BUTTON_ACTIVE;
     this.regexp = obj.REGEXP;
-    this._setHandlers = this._setHandlers.bind(this);
+    this.setHandlers = this.setHandlers.bind(this);
     this._validateForm = this._validateForm.bind(this);
     this.setServerError = this.setServerError.bind(this);
     this._validateInputElement = this._validateInputElement.bind(this);
@@ -46,7 +46,7 @@ export default class Form {
     }
   }
 
-  _setHandlers() {
+  setHandlers() {
     document.querySelector(`.${this.popupForm}`).addEventListener('input', this._validateInputElement);
   }
 }
