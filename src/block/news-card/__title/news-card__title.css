@@ -6,13 +6,18 @@
   line-height: 30px;
   color: #1A1B22;
   margin: 0;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 @media screen and (max-width: 1025px) {
   .news-card__title {
     font-size: 22px;
     line-height: 24px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 }
