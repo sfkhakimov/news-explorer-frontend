@@ -1,5 +1,5 @@
 export default class Popup {
-  constructor(obj, form, header, mainApi) {
+  constructor(obj, form, header, mainApi, authorization) {
     this.popupClose = obj.POPUP_CLOSE;
     this.replace = obj.POPUP_REPLACE;
     this.root = obj.ROOT;
@@ -10,12 +10,15 @@ export default class Popup {
     this.buttonSignUp = obj.BUTTON_SIGNUP;
     this.buttonSignIn = obj.BUTTON_SIGNIN;
     this.popupButton = obj.POPUP_BUTTON;
-    this.form = form;
+    this.popupForm = obj.POPUP_FORM;
     this.header = header;
+    this.form = form;
     this.mainApi = mainApi;
+    this.authorization = authorization;
     this.open = this.open.bind(this);
     this.setContent = this.setContent.bind(this);
     this.close = this.close.bind(this);
+    this.eventClose = this.eventClose.bind(this);
     this.change = this.change.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this._setHandlers = this._setHandlers.bind(this);
@@ -30,7 +33,7 @@ export default class Popup {
   }
 
   open() {
-    if (this.header.logged === false) {
+    if (this.authorization.login === false) {
       this.setContent(this.signInPopup);
     } else {
       this.header.output();
@@ -39,6 +42,14 @@ export default class Popup {
 
   close() {
     document.querySelector(`.${this.openedPopup}`).remove();
+  }
+
+  eventClose() {
+    if (event.key === 'Escape'
+      || event.target.classList.contains(this.openedPopup)
+      || event.target.classList.contains(this.popupClose)) {
+      this.close();
+    }
   }
 
   change() {
@@ -52,32 +63,37 @@ export default class Popup {
 
   submitForm() {
     event.preventDefault();
-    const form = document.querySelector(`.${this.form.popupForm}`);
+    const form = document.querySelector(`.${this.popupForm}`);
     if (form.id === 'authorization') {
       this.mainApi.signin(form.elements.email.value, form.elements.password.value)
         .then((user) => {
+          if (user.name === undefined) {
+            throw user;
+          }
           this.header.render(user.name);
           this.close();
         })
-        .catch((err) => {
-          this.form.setServerError(err);
-        });
+        .catch((err) => this.form.setServerError(err.message));
     } else if (form.id === 'registration') {
-      this.mainApi.signup(form.elements.email.value, form.elements.password.value, form.elements.name.value)
-        .then((res) => {
+      this.mainApi.signup(form.elements.email.value,
+        form.elements.password.value,
+        form.elements.name.value)
+        .then((user) => {
+          if (user.name === undefined) {
+            throw user;
+          }
           this.header.rememberUser(form.elements.email.value, form.elements.password.value);
           this.close();
           this.setContent(this.resultPopup);
         })
-        .catch((err) => {
-          this.form.setServerError(err);
-        });
+        .catch((err) => this.form.setServerError(err.message));
     }
   }
 
   _setHandlers() {
-    document.querySelector(`.${this.popupClose}`).addEventListener('click', this.close);
+    document.querySelector(`.${this.openedPopup}`).addEventListener('click', this.eventClose);
+    document.addEventListener('keydown', this.eventClose);
     document.querySelector(`.${this.replace}`).addEventListener('click', this.change);
-    document.querySelector(`.${this.form.popupForm}`).addEventListener('submit', this.submitForm);
+    document.querySelector(`.${this.popupForm}`).addEventListener('submit', this.submitForm);
   }
 }
