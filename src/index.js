@@ -4,43 +4,27 @@ import Form from './js/components/Form';
 import Popup from './js/components/Popup';
 import MainApi from './js/api/MainApi';
 import Header from './js/components/Header';
+import Search from './js/components/Search';
+import NewsApi from './js/api/NewsApi';
+import NewsCardList from './js/components/NewsCardList';
+import NewsCard from './js/components/NewsCard';
+import Authorization from './js/components/Authorization';
+
+import formattingDate from './js/utils/formattingDate';
+
+import popupObj from './js/constants/popup';
+import formObj from './js/constants/form';
+import headerObj from './js/constants/header';
+import { SEARCH_FORM } from './js/constants/search';
+import newsCardObj from './js/constants/news-card';
+import newsCardListObj from './js/constants/news-card-list';
 
 import {
-  POPUP_CLOSE,
-  POPUP_REPLACE,
-  ROOT,
-  POPUP,
-  HEADER_BUTTON,
-  SIGNIN_POPUP,
-  SIGNUP_POPUP,
-  RESULT_POPUP,
-  BUTTON_SIGNUP,
-  BUTTON_SIGNIN,
-  POPUP_IS_OPENED,
-} from './js/constants/popup';
-import {
-  ERROR_TYPE,
-  ERROR_LENGTH,
-  ERROR_SERVER,
-  ERROR_KEYWORD,
-  POPUP_FORM,
-  BUTTON_ACTIVE,
-  POPUP_BUTTON,
-  ERROR_REQUIRED,
-} from './js/constants/form';
-
-import {
-  MOBILE_INPUT,
-  NAVIGATION_CONTAINER,
-  NAVIGATION_CONTAINER_ACTIVE,
-  HEADER,
-  HEADER_MOBILE,
-  OVERLAY,
-  OVERLAY_ACTIVE,
-  HEADER_BUTTON_IMAGE,
-  HEADER_ARTICLE,
-  NAV_ITEM_DISPLAY_NONE,
-} from './js/constants/header';
+  NEWS_URL,
+  API_KEY,
+  SORT,
+  PAGE_SIZE,
+} from './js/constants/news-api';
 
 import {
   URL,
@@ -48,61 +32,34 @@ import {
   COOKIE,
 } from './js/constants/main-api';
 
-const module = (function () {
-
+(function () {
+  const authorization = new Authorization();
   const mainApi = new MainApi({
     baseUrl: URL,
     headers: HEADERS,
     credentials: COOKIE,
   });
 
-  const header = new Header({
-    MOBILE_INPUT,
-    NAVIGATION_CONTAINER,
-    NAVIGATION_CONTAINER_ACTIVE,
-    HEADER,
-    HEADER_MOBILE,
-    OVERLAY,
-    OVERLAY_ACTIVE,
-    HEADER_BUTTON,
-    HEADER_BUTTON_IMAGE,
-    HEADER_ARTICLE,
-    NAV_ITEM_DISPLAY_NONE,
-  }, mainApi);
+  const newsApi = new NewsApi({
+    NEWS_URL,
+    API_KEY,
+    SORT,
+    PAGE_SIZE,
+  }, formattingDate);
 
-  const popup = new Popup({
-    POPUP_CLOSE,
-    POPUP_REPLACE,
-    ROOT,
-    POPUP,
-    SIGNIN_POPUP,
-    SIGNUP_POPUP,
-    RESULT_POPUP,
-    BUTTON_SIGNUP,
-    BUTTON_SIGNIN,
-    POPUP_BUTTON,
-  },
-  new Form({
-    ERROR_TYPE,
-    ERROR_LENGTH,
-    ERROR_SERVER,
-    ERROR_KEYWORD,
-    POPUP_FORM,
-    BUTTON_ACTIVE,
-    POPUP_BUTTON,
-    ERROR_REQUIRED,
-  }), header, mainApi);
+  const createCard = () => new NewsCard(newsCardObj, authorization, mainApi);
+  const newsCardList = new NewsCardList(newsCardListObj, createCard);
+  const header = new Header(headerObj, mainApi, authorization, newsCardList);
+  const popup = new Popup(popupObj, new Form(formObj), header, mainApi, authorization);
 
+  const search = new Search({ SEARCH_FORM }, newsApi, newsCardList);
 
+  newsCardList._setHandlers();
+  search._setHandlers();
   header._setHndlers();
-  document.querySelector(`.${HEADER_BUTTON}`).addEventListener('click', popup.open);
+  document.querySelector(`.${popupObj.HEADER_BUTTON}`).addEventListener('click', popup.open);
 
   mainApi.getUserData()
-    .then((res) => {
-      header.render(res.user.name);
-    })
-    .catch((err) => {
-      header.render();
-    });
-
+    .then((res) => header.render(res.user.name))
+    .catch((err) => header.render());
 }());
