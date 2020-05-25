@@ -8,6 +8,7 @@ export default class Form {
     this.popupForm = obj.POPUP_FORM;
     this.popupButton = obj.POPUP_BUTTON;
     this.buttonActive = obj.BUTTON_ACTIVE;
+    this.regexp = obj.REGEXP;
     this._setHandlers = this._setHandlers.bind(this);
     this._validateForm = this._validateForm.bind(this);
     this.setServerError = this.setServerError.bind(this);
@@ -23,7 +24,7 @@ export default class Form {
       document.querySelector(`#error-${event.target.id}`).textContent = this.errorRequired;
     } else if (event.target.validity.tooShort || event.target.validity.tooLong) {
       document.querySelector(`#error-${event.target.id}`).textContent = this.errorLength;
-    } else if (event.target.validity.typeMismatch) {
+    } else if (event.target.type === 'email' && !this.regexp.exec(event.target.value)) {
       document.querySelector(`#error-${event.target.id}`).textContent = `${this.errorType} ${event.target.type}`;
     } else {
       document.querySelector(`#error-${event.target.id}`).textContent = '';
