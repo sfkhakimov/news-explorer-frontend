@@ -11,4 +11,5 @@ export default {
   MOUNTH: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
   NEWS_CARD_BUTTON_DESCRIPTION: 'news-card__button-description',
   NEWS_CARD_BUTTON_SAVED: 'news-card__button_saved',
+  NEWS_CARD_KEYWORDS: 'news-card__keywords',
 };
