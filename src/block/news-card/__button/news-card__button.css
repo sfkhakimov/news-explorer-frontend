@@ -1,4 +1,5 @@
 @import url(./_saved/news-card__button_saved.css);
+@import url(./_delete/news-card__button_delete.css);
 
 .news-card__button {
   background-image: url(../../../images/Rectangle_inactive.png);
