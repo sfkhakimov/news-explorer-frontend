@@ -1,5 +1,5 @@
 export default class NewsCardList {
-  constructor(obj, createCard) {
+  constructor(obj, createCard, mainApi) {
     this.articles = [];
     this.counter = 0;
     this.addedArticles = [];
@@ -13,6 +13,7 @@ export default class NewsCardList {
     this.searchFailed = obj.SEARCH_FAILED;
     this.searchFailedActive = obj.SEARCH_FAILED_ACTIVE;
     this.createCard = createCard;
+    this.mainApi = mainApi;
     this.key = undefined;
     this.isLogged = undefined;
     this.download = this.download.bind(this);
@@ -44,6 +45,7 @@ export default class NewsCardList {
     this.articles.forEach((elem, index) => {
       if (index < this.counter) {
         if (!this.addedArticles.includes(elem)) {
+          console.log(elem);
           const aticle = this.createCard();
           this.renderResult(aticle.card(elem));
           aticle.keyWord = this.key;
@@ -54,6 +56,13 @@ export default class NewsCardList {
     if (this.articles.length === this.addedArticles.length) {
       this.buttonHide();
     }
+  }
+
+  addSavedArticles(articles) {
+    articles.forEach((elem) => {
+      const aticle = this.createCard();
+      this.renderResult(aticle.createSavedCard(elem));
+    });
   }
 
   redrawCard() {
