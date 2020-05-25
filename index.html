@@ -7,7 +7,7 @@
   <meta name="author" content="Shakir Khakimov, s.f.khakimov@gmail.com">
   <title>NewsExplorer</title>
   <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="main.c6d1edaa6dde0a696508.css">
+  <link rel="stylesheet" href="main.fde340aecad7eb5b0829.css">
 </head>
 <body>
 
@@ -30,14 +30,12 @@
                 <li class="nav__item">
                   <a href="./index.html" class="link link_active nav__link">Главная</a>
                 </li>
-                <li class="nav__item">
+                <li id="nav-item-article" class="nav__item nav__item_display_none">
                   <a href="./article.html" class="link nav__link">Сохраненные статьи</a>
                 </li>
               </ul>
             </nav>
-            <button class="button header__button">Шакир
-              <img src="./images/logout.svg" alt="Выйти" class="header__button-image">
-            </button>
+            <button class="button header__button"></button>
           </div>
         </div>
       </header>
@@ -47,7 +45,8 @@
           <h1 class="search__title">Что в мире творится?</h1>
           <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
           <form class="search__form">
-            <input type="text" name="search" class="search__field" placeholder="Введите тему новости" required>
+            <input id="search" type="text" name="search" class="search__field" placeholder="Введите тему новости" required>
+            <p id="error-search" class="popup__error"></p>
             <button class="button search__button">Искать</button>
           </form>
         </div>
@@ -73,52 +72,6 @@
           <div class="result__content">
             <div class="result__cards">
               <h2 class="result__title">Результаты поиска</h2>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
             </div>
             <button class="button result__show-more">Показать еще</button>
           </div>
@@ -170,64 +123,90 @@
         </div>
       </div>
 
-      <div class="popup" id="signin">
+    </section>
+
+    <template id="news-card">
+        <div class="news-card__image">
+          <button class="button news-card__button"></button>
+          <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
+        </div>
+        <div class="news-card__container">
+          <p class="news-card__date"></p>
+          <a href="" class="link" target="_blank">
+            <h3 class="news-card__title"></h3>
+          </a>
+          <p class="news-card__description"></p>
+          <p class="news-card__source"></p>
+        </div>
+    </template>
+
+    <template id="header-button-image">
+      <img src="./images/logout.svg" alt="Выйти" class="header__button-image">
+    </template>
+
+    <template id="signin">
+      <div class="popup popup_is-opened">
         <div class="popup__content">
           <img src="./images/back.svg" alt="Закрыть форму" class="popup__close">
           <h3 class="popup__title">Вход</h3>
-          <form class="popup__form">
+          <form class="popup__form" id="authorization" novalidate>
             <p class="popup__input-type">Email</p>
-            <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
-            <p class="popup__error">Недопустимый формат email</p>
+            <input id="email" type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+            <p id="error-email" class="popup__error"></p>
             <p class="popup__input-type">Пароль</p>
-            <input type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
-            <p class="popup__error popup__error_position">Недопустимый формат пароля</p>
-            <button class="button popup__button popup__button_active">Войти</button>
+            <input id="password" type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
+            <p id="error-password" class="popup__error popup__error_position"></p>
+            <p class="popup__error-server"></p>
+            <button type="submit" class="button popup__button" disabled>Войти</button>
           </form>
           <div class="popup__container">
             <p class="popup__text">или</p>
-            <button class="button popup__button-link">Зарегистрироваться</button>
+            <button class="button popup__button-link" id="button-signup">Зарегистрироваться</button>
           </div>
         </div>
       </div>
+    </template>
 
-      <div class="popup" id="signup">
+    <template id="signup">
+      <div class="popup popup_is-opened">
         <div class="popup__content">
           <img src="./images/back.svg" alt="Закрыть форму" class="popup__close">
           <h3 class="popup__title">Регистрация</h3>
-          <form class="popup__form">
+          <form class="popup__form" id="registration" novalidate>
             <p class="popup__input-type">Email</p>
-            <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
-            <p class="popup__error">Недопустимый формат email</p>
+            <input id="email" type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+            <p id="error-email" class="popup__error"></p>
             <p class="popup__input-type">Пароль</p>
-            <input type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
-            <p class="popup__error">Недопустимый формат пароля</p>
+            <input id="password" type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
+            <p id="error-password" class="popup__error"></p>
             <p class="popup__input-type">Имя</p>
-            <input type="text" name="password" class="popup__input" placeholder="Введите своё имя" required>
-            <p class="popup__error popup__error_position">Недопустимое имя</p>
-            <p class="popup__error-server">Такой пользователь уже есть</p>
-            <button class="button popup__button">Зарегистрироваться</button>
+            <input id="name" type="text" name="name" class="popup__input" placeholder="Введите своё имя" required minlength="2" maxlength="30">
+            <p id="error-name" class="popup__error popup__error_position"></p>
+            <p class="popup__error-server"></p>
+            <button type="submit" class="button popup__button" disabled>Зарегистрироваться</button>
           </form>
           <div class="popup__container">
             <p class="popup__text">или</p>
-            <button class="button popup__button-link">Войти</button>
+            <button class="button popup__button-link" id="button-signin">Войти</button>
           </div>
         </div>
       </div>
+    </template>
 
-      <div class="popup" id="signup-result">
+    <template id="signup-result">
+      <div class="popup popup_is-opened">
         <div class="popup__content">
           <img src="./images/back.svg" alt="Закрыть форму" class="popup__close">
           <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
-            <button class="button popup__button-authorization">Выполнить вход</button>
+            <button type="submit" class="button popup__button-link popup__button-authorization">Выполнить вход</button>
         </div>
       </div>
-
-    </section>
+    </template>
 
     <div class="overlay"></div>
 
   </div>
 
-  <script type="module" src="main.7caecbb71cd46b7dfee9.js"></script>
+  <script type="module" src="main.03dd9ab7ba563803d44b.js"></script>
 </body>
 </html>
