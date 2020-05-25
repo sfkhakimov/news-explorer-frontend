@@ -28,7 +28,7 @@
               <li class="nav__item">
                 <a href="./index.html" class="link nav__link nav__link_theme_white">Главная</a>
               </li>
-              <li class="nav__item">
+              <li id="nav-item-article" class="nav__item nav__item_display_none">
                 <a href="./article.html" class="link link_active nav__link nav__link_theme_white">Сохраненные статьи</a>
               </li>
             </ul>
@@ -45,12 +45,11 @@
       <div class="saved-articles">
         <div class="saved-articles__container">
           <h2 class="saved-articles__title">Сохранённые статьи</h2>
-          <p class="saved-articles__subtitle">Шакир, у вас 5 сохранённых статей</p>
-          <p class="saved-articles__description">По ключевым словам:
-            <span class="saved-articles__keywrods">Природа,</span>
-            <span class="saved-articles__keywrods">Тайга</span>
-            и
-            <span class="saved-articles__keywrods">2 другим</span>
+          <p class="saved-articles__subtitle"></p>
+          <p class="saved-articles__description">
+            <span id="article-one" class="saved-articles__keywrods"></span>
+            <span id="article-two" class="saved-articles__keywrods"></span>
+            <span id="article-other" class="saved-articles__keywrods"></span>
           </p>
         </div>
       </div>
@@ -59,53 +58,6 @@
         <div class="result__container">
           <div class="result__content">
             <div class="result__cards">
-              <div class="news-card">
-                <div class="news-card__image">
-                  <p class="news-card__keywords">Природа</p>
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <p class="news-card__keywords">Природа</p>
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
-              </div>
-              <div class="news-card">
-                <div class="news-card__image">
-                  <p class="news-card__keywords">Природа</p>
-                  <button class="button news-card__button"></button>
-                </div>
-                <div class="news-card__container">
-                  <p class="news-card__date">2 августа, 2019</p>
-                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
-                    <h3 class="news-card__title">Национальное достояние – парки</h3>
-                  </a>
-                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
-                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
-                      где и сегодня каждый может приобщиться к природе.</p>
-                  <p class="news-card__source">Лента.ру</p>
-                </div>
               </div>
             </div>
           </div>
@@ -147,6 +99,25 @@
     </section>
 
     <div class="overlay"></div>
+
+    <template id="header-button-image">
+      <img src="<%=require('./images/logout_dark.svg').default%>" alt="Выйти" class="header__button-image">
+    </template>
+
+    <template id="news-card">
+      <div class="news-card__image">
+        <p class="news-card__keywords"></p>
+        <button class="button news-card__button news-card__button_delete"></button>
+      </div>
+      <div class="news-card__container">
+        <p class="news-card__date"></p>
+        <a href="" class="link" target="_blank">
+          <h3 class="news-card__title"></h3>
+        </a>
+        <p class="news-card__description"></p>
+        <p class="news-card__source"></p>
+      </div>
+  </template>
 
   </div>
 
