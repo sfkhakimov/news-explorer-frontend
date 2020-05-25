@@ -14,6 +14,8 @@ export default class Header {
     this.imageButton = obj.HEADER_BUTTON_IMAGE;
     this.headerArticle = obj.HEADER_ARTICLE;
     this.navItemDisplay = obj.NAV_ITEM_DISPLAY_NONE;
+    this.headerNameProject = obj.HEADER_NAME_PROJECT;
+    this.headerNameProjectMobile = obj.HEADER_NAME_PROJECT_MOBILE;
     this.api = api;
     this.newsCardList = newsCardList;
     this.authorization = authorization;
@@ -52,11 +54,13 @@ export default class Header {
     if (!document.querySelector(`.${this.navigation}`).classList.contains(this.navigationActive)) {
       document.querySelector(`.${this.navigation}`).classList.add(this.navigationActive);
       document.querySelector(`.${this.header}`).classList.add(this.headerMobile);
+      document.querySelector(`.${this.headerNameProject}`).classList.add(this.headerNameProjectMobile);
       document.querySelector(`.${this.overlay}`).classList.add(this.overlayActive);
     } else {
       document.querySelector(`.${this.navigation}`).classList.remove(this.navigationActive);
       document.querySelector(`.${this.header}`).classList.remove(this.headerMobile);
       document.querySelector(`.${this.overlay}`).classList.remove(this.overlayActive);
+      document.querySelector(`.${this.headerNameProject}`).classList.remove(this.headerNameProjectMobile);
     }
   }
 

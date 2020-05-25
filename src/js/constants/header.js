@@ -10,4 +10,6 @@ export default {
   HEADER_ARTICLE: 'nav-item-article',
   HEADER_BUTTON_IMAGE: 'header-button-image',
   HEADER_BUTTON: 'header__button',
+  HEADER_NAME_PROJECT: 'header__name-project',
+  HEADER_NAME_PROJECT_MOBILE: 'header__name-project_mobile',
 };

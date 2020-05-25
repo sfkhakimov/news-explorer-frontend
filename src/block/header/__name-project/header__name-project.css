@@ -1,4 +1,5 @@
 @import url(./_theme_white/header__name-project_theme_white.css);
+@import url(./_mobile/header__name-project_mobile.css);
 
 .header__name-project {
   color: #FFF;
