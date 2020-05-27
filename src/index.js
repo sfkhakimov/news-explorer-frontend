@@ -66,5 +66,5 @@ import {
       }
       header.render(res.user.name);
     })
-    .catch((err) => header.render());
+    .catch(() => header.render());
 }());

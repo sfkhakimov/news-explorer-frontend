@@ -28,18 +28,18 @@ export default class User {
     }
 
     if (this.popularKeywords.length === 1) {
-      document.querySelector(`.saved-articles__container`).insertAdjacentHTML('beforeend', `
+      document.querySelector('.saved-articles__container').insertAdjacentHTML('beforeend', `
       <p class="saved-articles__description">По ключевым словам:
         <span id="article-one" class="saved-articles__keywrods">${this.popularKeywords[0]}</span>
       </p>`);
     } else if (this.popularKeywords.length === 2) {
-      document.querySelector(`.saved-articles__container`).insertAdjacentHTML('beforeend', `
+      document.querySelector('.saved-articles__container').insertAdjacentHTML('beforeend', `
       <p class="saved-articles__description">По ключевым словам:
         <span id="article-one" class="saved-articles__keywrods">${this.popularKeywords[0]},</span>
         <span id="article-two" class="saved-articles__keywrods">${this.popularKeywords[1]}</span>
       </p>`);
     } else if (this.popularKeywords.length > 2) {
-      document.querySelector(`.saved-articles__container`).insertAdjacentHTML('beforeend', `
+      document.querySelector('.saved-articles__container').insertAdjacentHTML('beforeend', `
       <p class="saved-articles__description">По ключевым словам:
         <span id="article-one" class="saved-articles__keywrods">${this.popularKeywords[0]},</span>
         <span id="article-two" class="saved-articles__keywrods">${this.popularKeywords[1]}</span> и

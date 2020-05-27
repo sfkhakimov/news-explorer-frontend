@@ -3,8 +3,10 @@
   "rules": {
     "no-underscore-dangle": ["error", {
         "allowAfterThis": true,
-        "allowAfterSuper": true
+        "allowAfterSuper": true,
+        "allow": ["_id"]
       }],
+    "no-restricted-globals": ["off", "event"]
   },
   "env": {
     "browser": true

@@ -45,7 +45,7 @@ import {
       header.render(res.user.name);
       user.name = res.user.name;
     })
-    .catch((err) => header.render());
+    .catch(() => header.render());
   mainApi.getArticles()
     .then((res) => {
       if (res.message !== undefined) {

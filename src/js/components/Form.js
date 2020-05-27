@@ -33,9 +33,7 @@ export default class Form {
   }
 
   _validateForm() {
-    const isValidForm = Array.from(document.querySelector(`.${this.popupForm}`).elements).every((elem) => {
-      return elem.checkValidity();
-    });
+    const isValidForm = Array.from(document.querySelector(`.${this.popupForm}`).elements).every((elem) => elem.checkValidity());
 
     if (isValidForm) {
       document.querySelector(`.${this.popupButton}`).classList.add(this.buttonActive);

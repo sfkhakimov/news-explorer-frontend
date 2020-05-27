@@ -15,7 +15,7 @@ export default class Search {
     this.newsApi.getNews(form.elements.search.value)
       .then((res) => {
         if (res.articles.length === 0) {
-          throw res;
+          Promise.reject(res);
         }
         this.newsCardList.counter = 0;
         this.newsCardList.articles = res.articles;
@@ -26,7 +26,7 @@ export default class Search {
         this.newsCardList.uploaded();
         this.newsCardList.addCard();
       })
-      .catch((err) => {
+      .catch(() => {
         this.newsCardList.uploaded();
         this.newsCardList.searchErrorSetting();
       });
