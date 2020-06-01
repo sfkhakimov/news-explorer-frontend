@@ -2,13 +2,13 @@ import './style.css';
 
 import Form from './js/components/Form';
 import Popup from './js/components/Popup';
-import MainApi from './js/api/MainApi';
 import Header from './js/components/Header';
 import Search from './js/components/Search';
-import NewsApi from './js/api/NewsApi';
 import NewsCardList from './js/components/NewsCardList';
 import NewsCard from './js/components/NewsCard';
 import Authorization from './js/components/Authorization';
+
+import MainApi from './js/api/MainApi';
 
 import formattingDate from './js/utils/formattingDate';
 
@@ -18,46 +18,26 @@ import headerObj from './js/constants/header';
 import SEARCH_FORM from './js/constants/search';
 import newsCardObj from './js/constants/news-card';
 import newsCardListObj from './js/constants/news-card-list';
-
-import {
-  NEWS_URL,
-  API_KEY,
-  SORT,
-  PAGE_SIZE,
-} from './js/constants/news-api';
-
-import {
-  URL,
-  HEADERS,
-  COOKIE,
-} from './js/constants/main-api';
+import mainApiObj from './js/constants/main-api';
 
 (function () {
   const authorization = new Authorization();
-  const mainApi = new MainApi({
-    baseUrl: URL,
-    headers: HEADERS,
-    credentials: COOKIE,
-  });
-
-  const newsApi = new NewsApi({
-    NEWS_URL,
-    API_KEY,
-    SORT,
-    PAGE_SIZE,
-  }, formattingDate);
+  const mainApi = new MainApi(mainApiObj, formattingDate);
 
   const createCard = () => new NewsCard(newsCardObj, authorization, mainApi);
   const newsCardList = new NewsCardList(newsCardListObj, createCard);
-  const header = new Header(headerObj, mainApi, authorization, newsCardList);
+  const header = new Header(headerObj, authorization);
   const form = new Form(formObj);
-  const popup = new Popup(popupObj, form, header, mainApi, authorization);
-  const search = new Search(SEARCH_FORM, newsApi, newsCardList);
+  const popup = new Popup(popupObj, authorization);
+  const search = new Search(SEARCH_FORM);
+
+  header.setDependence({ newsCardList, mainApi, popup });
+  popup.setDependence({ form, header, mainApi });
+  search.setDependence({ mainApi, newsCardList });
 
   newsCardList.setHandlers();
   search.setHandlers();
   header.setHndlers();
-  document.querySelector(`.${popupObj.HEADER_BUTTON}`).addEventListener('click', popup.open);
 
   mainApi.getUserData()
     .then((res) => {
