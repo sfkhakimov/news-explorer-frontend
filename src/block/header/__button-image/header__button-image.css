@@ -1,3 +1,5 @@
+@import url(./_active/header__button-image_active.css);
+
 .header__button-image {
   padding-left: 5px;
 }

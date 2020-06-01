@@ -1,3 +1,6 @@
+@import url(./_saved/news-card__button_saved.css);
+@import url(./_delete/news-card__button_delete.css);
+
 .news-card__button {
   background-image: url(../../../images/Rectangle_inactive.png);
   background-repeat: no-repeat;
@@ -14,8 +17,9 @@
   background-image: url(../../../images/Rectangle_active.png);
 }
 
-.news-card__button:active {
-  background-image: url(../../../images/Rectangle_saved.png);
+.news-card__button:hover ~ .news-card__button-description {
+  display: block;
+  transition: .4s;
 }
 
 @media screen and (max-width: 1025px) {

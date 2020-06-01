@@ -1,10 +1,11 @@
 # news-explorer-frontend
 
-news-explorer - сервис поиска новостей. Дипломная работа к окончанию курса веб-разработки от Яндекс.Практикума. В этом репозитории фронтенд. Бэкен можно посмотреть по ссылке: https://github.com/SFKhakimov/news-explorer-api/tree/level-1
+news-explorer - сервис поиска новостей. Дипломная работа к окончанию курса веб-разработки от Яндекс.Практикума. В этом репозитории фронтенд. Бэкенl можно посмотреть по ссылке: https://github.com/SFKhakimov/news-explorer-api/tree/level-1
 
 ## Как посмотреть
 
-Просто перейдите по адресу: https://sfkhakimov.github.io/news-explorer-frontend/
+Для просмотра верстки перейдите по адресу: https://sfkhakimov.github.io/news-explorer-frontend/
+Для просмотра готового проекта: http://planet-news.ml/
 
 ## Как развернуть
 

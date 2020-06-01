@@ -1,3 +1,5 @@
+@import url(./_active/result__show-more_active.css);
+
 .result__show-more {
   background-color: #FFF;
   border-radius: 80px;
@@ -7,7 +9,7 @@
   font-size: 1.125em;
   line-height: 24px;
   padding: 18px 84px 22px;
-  display: flex;
+  display: none;
   align-self: center;
   margin-top: 64px;
 }

@@ -1,0 +1,7 @@
+.news-card__button.news-card__button_delete {
+  background-image: url(../../../../images/trash.svg);
+}
+
+.news-card__button.news-card__button_delete:hover {
+  background-image: url(../../../../images/trash_active.svg);
+}

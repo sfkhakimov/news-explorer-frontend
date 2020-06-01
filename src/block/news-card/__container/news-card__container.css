@@ -3,11 +3,11 @@
   padding: 20px 24px 24px;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
+  height: 304px;
 }
 
 @media screen and (max-width: 1025px) {
   .news-card__container {
-    max-height: 270px;
     padding: 16px;
   }
 }
