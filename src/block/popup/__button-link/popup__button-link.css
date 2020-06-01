@@ -1,0 +1,9 @@
+.popup__button-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.875em;
+  line-height: 17px;
+  color: #2F71E5;
+  padding: 0;
+}

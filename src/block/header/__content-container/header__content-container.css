@@ -1,0 +1,18 @@
+.header__content-container {
+  width: 86%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1025px) {
+  .header__content-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__content-container {
+    margin: 0 auto;
+  }
+}

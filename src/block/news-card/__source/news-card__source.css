@@ -1,0 +1,17 @@
+.news-card__source {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #B6BCBF;
+  margin: 0;
+  padding-top: 18px;
+}
+
+@media screen and (max-width: 1025px) {
+  .news-card__source {
+    padding-top: 12px;
+  }
+}

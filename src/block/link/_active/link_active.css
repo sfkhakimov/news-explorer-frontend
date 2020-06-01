@@ -1,0 +1,18 @@
+.link_active {
+  color: #FFF;
+  padding-bottom: 26px;
+  border-bottom: 3px solid;
+}
+
+@media screen and (max-width: 1025px) {
+  .link_active {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .link_active {
+    border: 0;
+    padding-bottom: 0;
+  }
+}

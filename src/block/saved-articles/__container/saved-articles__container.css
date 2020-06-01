@@ -1,0 +1,12 @@
+.saved-articles__container {
+  width: 86%;
+  margin: auto;
+  padding: 40px 0px 56px;
+}
+
+@media screen and (max-width: 767px) {
+  .saved-articles__container {
+    width: 90%;
+    padding: 24px 0px 32px;
+  }
+}

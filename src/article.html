@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сайт поиска новостей">
+  <meta name="author" content="Shakir Khakimov, s.f.khakimov@gmail.com">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="<%=require('./images/favicon.svg').default%>" type="image/svg+xml">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.article.css %>">
+</head>
+<body>
+
+  <div class="root">
+
+    <header class="header header_theme_white">
+      <div class="header__container">
+        <div class="header__content">
+          <div class="header__content-container">
+            <p class="header__name-project header__name-project_theme_white">NewsExplorer</p>
+            <input id="mobile-menu" type="checkbox" class="header__mobile-input">
+            <label for="mobile-menu" class="header__mobile-button header__mobile-button_theme_white"></label>
+          </div>
+        </div>
+        <div class="header__navigation-container">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="./index.html" class="link nav__link nav__link_theme_white">Главная</a>
+              </li>
+              <li class="nav__item">
+                <a href="./article.html" class="link link_active nav__link nav__link_theme_white">Сохраненные статьи</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="button header__button header__button_theme_white">Шакир
+            <img src="<%=require('./images/logout_dark.svg').default%>" alt="Выйти" class="header__button-image">
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="main">
+
+      <div class="saved-articles">
+        <div class="saved-articles__container">
+          <h2 class="saved-articles__title">Сохранённые статьи</h2>
+          <p class="saved-articles__subtitle">Шакир, у вас 5 сохранённых статей</p>
+          <p class="saved-articles__description">По ключевым словам:
+            <span class="saved-articles__keywrods">Природа,</span>
+            <span class="saved-articles__keywrods">Тайга</span>
+            и
+            <span class="saved-articles__keywrods">2 другим</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="result__container">
+          <div class="result__content">
+            <div class="result__cards">
+              <div class="news-card">
+                <div class="news-card__image">
+                  <p class="news-card__keywords">Природа</p>
+                  <button class="button news-card__button"></button>
+                </div>
+                <div class="news-card__container">
+                  <p class="news-card__date">2 августа, 2019</p>
+                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                    <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  </a>
+                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                      где и сегодня каждый может приобщиться к природе.</p>
+                  <p class="news-card__source">Лента.ру</p>
+                </div>
+              </div>
+              <div class="news-card">
+                <div class="news-card__image">
+                  <p class="news-card__keywords">Природа</p>
+                  <button class="button news-card__button"></button>
+                </div>
+                <div class="news-card__container">
+                  <p class="news-card__date">2 августа, 2019</p>
+                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                    <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  </a>
+                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                      где и сегодня каждый может приобщиться к природе.</p>
+                  <p class="news-card__source">Лента.ру</p>
+                </div>
+              </div>
+              <div class="news-card">
+                <div class="news-card__image">
+                  <p class="news-card__keywords">Природа</p>
+                  <button class="button news-card__button"></button>
+                </div>
+                <div class="news-card__container">
+                  <p class="news-card__date">2 августа, 2019</p>
+                  <a href="https://lenta.ru/news/2019/10/08/parki/" class="link" target="_blank">
+                    <h3 class="news-card__title">Национальное достояние – парки</h3>
+                  </a>
+                  <p class="news-card__description">В 2016 году Америка отмечала важный юбилей:
+                     сто лет назад здесь начала складываться система национальных парков – охраняемых территорий,
+                      где и сегодня каждый может приобщиться к природе.</p>
+                  <p class="news-card__source">Лента.ру</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer__container">
+          <p class="footer__text">&COPY; 2020 Supersite, Powered by News API</p>
+          <div class="footer__navigation">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="./index.html" class="link nav__link nav__link_theme_dark">Главная</a>
+                </li>
+                <li class="nav__item">
+                  <a href="https://praktikum.yandex.ru/" target="_blank" class="link nav__link nav__link_theme_dark">Яндекс.Практикум</a>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav">
+              <ul class="nav__list nav__list_position">
+                <li class="nav__item">
+                  <a href="https://github.com/SFKhakimov" target="_blank" class="link nav__link nav__link_theme_dark">
+                    <img src="<%=require('./images/github.svg').default%>" alt="github" class="nav__image">
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="https://www.facebook.com/profile.php?id=100022969904084" target="_blank" class="link nav__link nav__link_theme_dark">
+                    <img src="<%=require('./images/fb.svg').default%>" alt="facebook" class="nav__image">
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="overlay"></div>
+
+  </div>
+
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.article.entry %>"></script>
+</body>
+</html>

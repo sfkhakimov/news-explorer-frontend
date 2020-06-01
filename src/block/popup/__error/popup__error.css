@@ -1,0 +1,14 @@
+@import url(./_position/popup__error_position.css);
+
+.popup__error {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75em;
+  line-height: 15px;
+  color: #FF0000;
+  position: relative;
+  bottom: 25px;
+  margin: 0;
+  display: none;
+}

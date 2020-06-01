@@ -1,0 +1,10 @@
+.news-card__date {
+  font-family: 'Source Sans Pro' sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125em;
+  line-height: 24px;
+  margin: 0;
+  color: #B6BCBF;
+  padding-bottom: 12px;
+}

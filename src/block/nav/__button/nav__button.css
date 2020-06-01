@@ -1,0 +1,14 @@
+@import url(./_theme_white/nav__button_theme_white.css);
+
+.nav__button {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 1.125em;
+  font-family: 'Roboto';
+  background-color: transparent;
+  border: 1px solid #FFF;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding: 12px 12px 15px;
+  cursor: pointer;
+}

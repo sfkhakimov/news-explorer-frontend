@@ -1,0 +1,26 @@
+.news-card__button {
+  background-image: url(../../../images/Rectangle_inactive.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px 20px;
+  background-color:#FFF;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 8px;
+}
+
+.news-card__button:hover {
+  background-image: url(../../../images/Rectangle_active.png);
+}
+
+.news-card__button:active {
+  background-image: url(../../../images/Rectangle_saved.png);
+}
+
+@media screen and (max-width: 1025px) {
+  .news-card__button {
+    top: 10px;
+    right: 10px;
+  }
+}

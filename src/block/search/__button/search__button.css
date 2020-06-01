@@ -1,0 +1,34 @@
+.search__button {
+  background-color: #2F71E5;
+  position: absolute;
+  padding: 21px 54px;
+  font-size: 1.125em;
+  line-height: 24px;
+  top: -1px;
+  right: -1px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: #FFF;
+  text-align: center;
+}
+
+.search__button:hover {
+  background-color: #347EFF;
+}
+
+.search__button:active {
+  background-color: #2A65CC
+}
+
+@media screen and (max-width: 1025px) {
+  .search__button {
+    padding: 17px 50px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .search__button {
+    position: relative;
+  }
+}

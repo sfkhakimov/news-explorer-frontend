@@ -1,0 +1,16 @@
+.nav__item {
+  list-style-type: none;
+  margin-right: 32px;
+}
+
+@media screen and (max-width: 1025px) {
+  .nav__item {
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav__item {
+    padding-bottom: 30px;
+  }
+}

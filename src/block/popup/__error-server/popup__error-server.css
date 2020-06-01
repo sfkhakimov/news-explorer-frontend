@@ -1,0 +1,13 @@
+.popup__error-server {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.75em;
+  line-height: 15px;
+  color: #FF0000;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  top: 30px;
+  display: none;
+}

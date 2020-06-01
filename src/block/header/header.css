@@ -1,0 +1,39 @@
+@import url(./__container/header__container.css);
+@import url(./__name-project/header__name-project.css);
+@import url(./__navigation-button/header__navigation-button.css);
+@import url(./__navigation-container/header____navigation-container.css);
+@import url(./_theme_white/header_theme_white.css);
+@import url(./_mobile/heder_mobile.css);
+@import url(./__button/header__button.css);
+@import url(./__button-image/header__button-image.css);
+@import url(./__mobile-input/header__mobile-input.css);
+@import url(./__mobile-button/header__mobile-button.css);
+@import url(./__content/header__content.css);
+@import url(./__content-container/header__content-container.css);
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: .4s;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1025px) {
+  .header {
+    font-size: 14px;
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-bottom: 0px;
+  }
+}

@@ -1,0 +1,6 @@
+.result__container {
+  max-width: 1440px;
+  margin: auto;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}

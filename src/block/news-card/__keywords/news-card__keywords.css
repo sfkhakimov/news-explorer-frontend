@@ -1,0 +1,25 @@
+.news-card__keywords {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875em;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  padding: 8px 12px;
+  background-color: #FFF;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 1025px) {
+  .news-card__keywords {
+    top: 10px;
+    left: 10px;
+  }
+}

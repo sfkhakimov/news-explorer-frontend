@@ -1,0 +1,19 @@
+.about__content {
+  width: 86%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+@media screen and (max-width: 1025px) {
+  .about__content {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .about__content {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,12 @@
+.header__button.header__button_theme_white {
+  color: #000;
+  border: 1px solid #000;
+}
+
+@media screen and (max-width: 767px) {
+  .header__button.header__button_theme_white {
+    color: #FFF;
+    border: 1px solid #FFF;
+  }
+
+}

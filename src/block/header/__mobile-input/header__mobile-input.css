@@ -1,0 +1,31 @@
+.header__mobile-input {
+  display: none;
+}
+
+.header__mobile-input:checked ~ .header__mobile-button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  transform: rotate(45deg);
+  background: #FFF;
+  top: 100%;
+  margin-top: -55%;
+  left: 0;
+  margin-left: 0%;
+}
+
+.header__mobile-input:checked ~ .header__mobile-button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  transform: rotate(-45deg);
+  background: #FFF;
+  top: 100%;
+  margin-top: -55%;
+  left: 0;
+  margin-left: -0%;
+}
+
+.header__mobile-input:checked ~ .header__navigation-container {
+  display: flex;
+}

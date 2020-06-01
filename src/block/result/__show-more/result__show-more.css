@@ -1,0 +1,30 @@
+.result__show-more {
+  background-color: #FFF;
+  border-radius: 80px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125em;
+  line-height: 24px;
+  padding: 18px 84px 22px;
+  display: flex;
+  align-self: center;
+  margin-top: 64px;
+}
+
+.result__show-more:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 1025px) {
+  .result__show-more {
+    margin-top: 32px;
+    padding: 15px 60px 17px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .result__show-more {
+    margin-top: 15px;
+  }
+}

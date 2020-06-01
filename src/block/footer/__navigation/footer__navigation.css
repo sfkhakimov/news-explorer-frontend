@@ -1,0 +1,9 @@
+.footer__navigation {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .footer__navigation {
+    width: 100%;
+  }
+}

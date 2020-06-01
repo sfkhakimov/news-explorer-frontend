@@ -1,0 +1,13 @@
+@import url(./_theme_white/nav__link_theme_white.css);
+@import url(./_theme_dark/nav__link_theme_dark.css);
+
+.nav__link {
+  color: #B6BCBF;
+  font-size: 1.125em;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__link {
+    color: #FFF;
+  }
+}

@@ -1,0 +1,5 @@
+@media screen and (min-width: 768px) {
+  .nav__link.nav__link_theme_white {
+    color: #000;
+  }
+}

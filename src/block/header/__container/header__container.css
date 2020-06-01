@@ -1,0 +1,22 @@
+.header__container {
+  width: 86%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1440px) {
+  .header__container {
+    width: 1440px;
+    padding: 0px 104px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__container {
+    flex-direction: column;
+    width: 100%;
+  }
+}

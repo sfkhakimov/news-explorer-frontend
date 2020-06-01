@@ -1,0 +1,32 @@
+@import url(./_theme_white/header__button_theme_white.css);
+
+.header__button {
+  color: #FFF;
+  font-size: 1.125em;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #FFF;
+  box-sizing: border-box;
+  padding: 12px 19px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1025px) {
+  .header__button {
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__button {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__button {
+    align-self: auto;
+    justify-content: center;
+    padding: 12px 15px;
+  }
+}
