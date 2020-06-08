@@ -25,7 +25,9 @@ https://github.com/SFKhakimov/news-explorer-api
 ## Какие технологии использовались
 
 На фронтенде: CSS, HTML, Webpack, Babel, JS
+
 На бэкенде: Node.js, Express.js, MongoDB. Также библиотеки: Validator, Joi, Celebrate
+
 Файловая структура по БЭМ.
 
 ## Версия
