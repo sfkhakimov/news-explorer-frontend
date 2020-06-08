@@ -1,8 +1,8 @@
 export default class Search {
-  constructor(SEARCH_FORM, newsApi, newsCardList) {
+  constructor(SEARCH_FORM) {
     this.searchForm = SEARCH_FORM;
-    this.newsApi = newsApi;
-    this.newsCardList = newsCardList;
+    this.mainApi = undefined;
+    this.newsCardList = undefined;
     this.searchNews = this.searchNews.bind(this);
     this.setHandlers = this.setHandlers.bind(this);
   }
@@ -12,7 +12,7 @@ export default class Search {
     this.newsCardList.searchErrorRemove();
     this.newsCardList.download();
     const form = document.querySelector(`.${this.searchForm}`);
-    this.newsApi.getNews(form.elements.search.value)
+    this.mainApi.getNews(form.elements.search.value)
       .then((res) => {
         if (res.articles.length === 0) {
           Promise.reject(res);
@@ -30,6 +30,11 @@ export default class Search {
         this.newsCardList.uploaded();
         this.newsCardList.searchErrorSetting();
       });
+  }
+
+  setDependence(dependence) {
+    this.mainApi = dependence.mainApi;
+    this.newsCardList = dependence.newsCardList;
   }
 
   setHandlers() {

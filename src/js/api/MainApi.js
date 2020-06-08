@@ -1,11 +1,19 @@
 export default class MainApi {
-  constructor(api) {
-    this.baseUrl = api.baseUrl;
-    this.headers = api.headers;
-    this.credentials = api.credentials;
+  constructor(api, date) {
+    this.baseUrl = api.URL;
+    this.headers = api.HEADERS;
+    this.credentials = api.COOKIE;
+    this.sort = api.SORT;
+    this.resultSize = api.RESULT_SIZE;
+    this.from = date().previousDate;
+    this.to = date().currentDate;
     this.signin = this.signin.bind(this);
     this.signup = this.signup.bind(this);
+    this.getNews = this.getNews.bind(this);
     this.getUserData = this.getUserData.bind(this);
+    this.getArticles = this.getArticles.bind(this);
+    this.createArticle = this.createArticle.bind(this);
+    this.removeArticle = this.removeArticle.bind(this);
     this.logout = this.logout.bind(this);
   }
 
@@ -44,6 +52,20 @@ export default class MainApi {
       credentials: this.credentials,
     })
       .then((res) => res.json())
+      .catch((err) => Promise.reject(err));
+  }
+
+  getNews(key) {
+    return fetch((`${this.baseUrl}/news-api?keyword=${key}&${this.sort}&${this.resultSize}&fromDate=${this.from}&toDate=${this.to}`), {
+      headers: this.headers,
+      credentials: this.credentials,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(res);
+      })
       .catch((err) => Promise.reject(err));
   }
 

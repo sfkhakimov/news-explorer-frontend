@@ -1,5 +1,5 @@
 export default class Popup {
-  constructor(obj, form, header, mainApi, authorization) {
+  constructor(obj, authorization) {
     this.popupClose = obj.POPUP_CLOSE;
     this.replace = obj.POPUP_REPLACE;
     this.root = obj.ROOT;
@@ -11,10 +11,10 @@ export default class Popup {
     this.buttonSignIn = obj.BUTTON_SIGNIN;
     this.popupButton = obj.POPUP_BUTTON;
     this.popupForm = obj.POPUP_FORM;
-    this.header = header;
-    this.form = form;
-    this.mainApi = mainApi;
     this.authorization = authorization;
+    this.form = undefined;
+    this.mainApi = undefined;
+    this.header = undefined;
     this.open = this.open.bind(this);
     this.setContent = this.setContent.bind(this);
     this.close = this.close.bind(this);
@@ -33,11 +33,7 @@ export default class Popup {
   }
 
   open() {
-    if (this.authorization.login === false) {
-      this.setContent(this.signInPopup);
-    } else {
-      this.header.output();
-    }
+    this.setContent(this.signInPopup);
   }
 
   close() {
@@ -82,12 +78,17 @@ export default class Popup {
           if (user.name === undefined) {
             throw user;
           }
-          this.header.rememberUser(form.elements.email.value, form.elements.password.value);
           this.close();
           this.setContent(this.resultPopup);
         })
         .catch((err) => this.form.setServerError(err.message));
     }
+  }
+
+  setDependence(dependence) {
+    this.form = dependence.form;
+    this.mainApi = dependence.mainApi;
+    this.header = dependence.header;
   }
 
   _setHandlers() {
