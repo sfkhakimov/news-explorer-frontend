@@ -26,8 +26,7 @@ export default class Search {
         this.newsCardList.uploaded();
         this.newsCardList.addCard();
       })
-      .catch((err) => {
-        console.log(err.message)
+      .catch(() => {
         this.newsCardList.uploaded();
         this.newsCardList.searchErrorSetting();
       });
