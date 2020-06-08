@@ -16,6 +16,7 @@ https://github.com/SFKhakimov/news-explorer-api
 ## Как посмотреть
 
 Для просмотра верстки перейдите по адресу: https://sfkhakimov.github.io/news-explorer-frontend/
+
 Для просмотра готового проекта: http://planet-news.ml/
 
 ## Как развернуть
