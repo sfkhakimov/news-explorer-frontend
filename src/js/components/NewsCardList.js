@@ -40,6 +40,7 @@ export default class NewsCardList {
     while (resultContainer.firstChild) {
       resultContainer.removeChild(resultContainer.firstChild);
     }
+    document.querySelector(`.${this.result}`).classList.remove(this.resultActive);
   }
 
   addCard() {

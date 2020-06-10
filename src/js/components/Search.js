@@ -11,22 +11,23 @@ export default class Search {
     event.preventDefault();
     this.newsCardList.searchErrorRemove();
     this.newsCardList.download();
+    this.newsCardList.removeResult();
     const form = document.querySelector(`.${this.searchForm}`);
     this.mainApi.getNews(form.elements.search.value)
       .then((res) => {
         if (res.articles.length === 0) {
-          Promise.reject(res);
+          return Promise.reject(res);
         }
         this.newsCardList.counter = 0;
         this.newsCardList.articles = res.articles;
         this.newsCardList.addedArticles = [];
         this.newsCardList.key = form.elements.search.value;
-        this.newsCardList.removeResult();
         this.newsCardList.buttonShow();
         this.newsCardList.uploaded();
         this.newsCardList.addCard();
       })
       .catch(() => {
+        this.newsCardList.buttonHide();
         this.newsCardList.uploaded();
         this.newsCardList.searchErrorSetting();
       });
