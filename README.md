@@ -33,4 +33,4 @@ https://github.com/SFKhakimov/news-explorer-api
 
 ## Версия
 
-Версия 1.0.0
+Версия 1.0.1
