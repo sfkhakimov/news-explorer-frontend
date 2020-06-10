@@ -12,8 +12,3 @@
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
-
-@media screen and (max-width: 1025px) {
-  .news-card__description {
-  }
-}
