@@ -1,7 +1,7 @@
 {
   "name": "news-explorer-frontend",
   "homepage": "https://github.com/SFKhakimov/news-explorer-frontend#readme",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {

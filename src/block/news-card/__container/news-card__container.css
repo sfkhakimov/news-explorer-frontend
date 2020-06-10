@@ -4,6 +4,7 @@
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   height: 304px;
+  position: relative;
 }
 
 @media screen and (max-width: 1025px) {
