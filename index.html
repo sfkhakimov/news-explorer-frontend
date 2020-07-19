@@ -1,18 +1,218 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VK auth</title>
-    <link
-      rel="stylesheet"
-      href="main.7a82117561e3d50f6d7a.css"
-    />
-  </head>
-  <body>
-    <div id="auth" class="root">
-      <button class="button button_acitve">Авторизоваться</button>
-    </div>
-    <script src="main.24f6b4e84393aee17f18.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сайт поиска новостей">
+  <meta name="author" content="Shakir Khakimov, s.f.khakimov@gmail.com">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="main.556cec08a0c56e679e5e.css">
+</head>
+<body>
+
+  <div class="root">
+
+    <section class="heading">
+
+      <header class="header">
+        <div class="header__container">
+          <div class="header__content">
+            <div class="header__content-container">
+              <p class="header__name-project">NewsExplorer</p>
+              <input id="mobile-menu" type="checkbox" class="header__mobile-input">
+              <label for="mobile-menu" class="header__mobile-button"></label>
+            </div>
+          </div>
+          <div class="header__navigation-container">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="./index.html" class="link link_active nav__link">Главная</a>
+                </li>
+                <li id="nav-item-article" class="nav__item nav__item_display_none">
+                  <a href="./article.html" class="link nav__link">Сохраненные статьи</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="button header__button"></button>
+          </div>
+        </div>
+      </header>
+
+      <div class="search">
+        <div class="search__container">
+          <h1 class="search__title">Что в мире творится?</h1>
+          <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+          <form class="search__form">
+            <input id="search" type="text" name="search" class="search__field" placeholder="Введите тему новости" required>
+            <p id="error-search" class="popup__error"></p>
+            <button class="button search__button">Искать</button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="main">
+
+      <div class="loading">
+        <i class="loading__circle-preloader"></i>
+        <p class="loading__text">Идет поиск новостей...</p>
+      </div>
+
+      <div class="search-failed">
+        <img src="./images/not-found_v1.png" alt="Не удалось найти новости" class="search-failed__image">
+        <h4 class="search-failed__title">Ничего не найдено</h4>
+        <p class="search-failed__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
+      </div>
+
+      <div class="result">
+        <div class="result__container">
+          <div class="result__content">
+            <div class="result__cards">
+              <h2 class="result__title">Результаты поиска</h2>
+            </div>
+            <button class="button result__show-more">Показать еще</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="about">
+        <div class="about__content">
+          <img src="./images/about.jpg" alt="Фото автора" class="about__image">
+          <div class="about__container">
+            <h3 class="about__title">Об авторе</h3>
+            <p class="about__text">Привет! Меня зовут Шакир, я начинающий веб-разработчик. В сентябре 2019 года записался
+               на курсы от Яндекс.Практикума и в июне 2020 их закончил.
+            </p>
+            <p class="about__text">За время учебы сделал несколько
+              <a href="https://github.com/SFKhakimov?tab=repositories" target="_blank" class="link about__link">проектов</a>,
+              особенно мне понравился
+              <a href="https://sfkhakimov.github.io/Homework/" target="_blank" class="link about__link">этот.</a> Все работы прошли ревью у менторов</p>
+            <p class="about__text">Пишу на современном JS. Знаю HTML и CSS, также могу собрать проект Webpack'ом,
+               подключитть сервер на Node.js (Express.js) и базу данных MongoDB.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer__container">
+          <p class="footer__text">&COPY; 2020 Supersite, Powered by News API</p>
+          <div class="footer__navigation">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="./index.html" class="link nav__link nav__link_theme_dark">Главная</a>
+                </li>
+                <li class="nav__item">
+                  <a href="https://praktikum.yandex.ru/" target="_blank" class="link nav__link nav__link_theme_dark">Яндекс.Практикум</a>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav">
+              <ul class="nav__list nav__list_position">
+                <li class="nav__item">
+                  <a href="https://github.com/SFKhakimov" target="_blank" class="link nav__link nav__link_theme_dark">
+                    <img src="./images/github.svg" alt="github" class="nav__image">
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="https://www.facebook.com/profile.php?id=100022969904084" target="_blank" class="link nav__link nav__link_theme_dark">
+                    <img src="./images/fb.svg" alt="facebook" class="nav__image">
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <template id="news-card">
+        <div class="news-card__image">
+          <button class="button news-card__button"></button>
+          <button class="button news-card__button-description">Войдите, чтобы сохранять статьи</button>
+        </div>
+        <div class="news-card__container">
+          <p class="news-card__date"></p>
+          <a href="" class="link" target="_blank">
+            <h3 class="news-card__title"></h3>
+          </a>
+          <p class="news-card__description"></p>
+          <p class="news-card__source"></p>
+        </div>
+    </template>
+
+    <template id="header-button-image">
+      <img src="./images/logout.svg" alt="Выйти" class="header__button-image">
+    </template>
+
+    <template id="signin">
+      <div class="popup popup_is-opened">
+        <div class="popup__content">
+          <img src="./images/back.svg" alt="Закрыть форму" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
+          <form class="popup__form" id="authorization" novalidate>
+            <p class="popup__input-type">Email</p>
+            <input id="email" type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+            <p id="error-email" class="popup__error"></p>
+            <p class="popup__input-type">Пароль</p>
+            <input id="password" type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
+            <p id="error-password" class="popup__error popup__error_position"></p>
+            <p class="popup__error-server"></p>
+            <button type="submit" class="button popup__button" disabled>Войти</button>
+          </form>
+          <div class="popup__container">
+            <p class="popup__text">или</p>
+            <button class="button popup__button-link" id="button-signup">Зарегистрироваться</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="signup">
+      <div class="popup popup_is-opened">
+        <div class="popup__content">
+          <img src="./images/back.svg" alt="Закрыть форму" class="popup__close">
+          <h3 class="popup__title">Регистрация</h3>
+          <form class="popup__form" id="registration" novalidate>
+            <p class="popup__input-type">Email</p>
+            <input id="email" type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+            <p id="error-email" class="popup__error"></p>
+            <p class="popup__input-type">Пароль</p>
+            <input id="password" type="text" name="password" class="popup__input" placeholder="Введите пароль" required>
+            <p id="error-password" class="popup__error"></p>
+            <p class="popup__input-type">Имя</p>
+            <input id="name" type="text" name="name" class="popup__input" placeholder="Введите своё имя" required minlength="2" maxlength="30">
+            <p id="error-name" class="popup__error popup__error_position"></p>
+            <p class="popup__error-server"></p>
+            <button type="submit" class="button popup__button" disabled>Зарегистрироваться</button>
+          </form>
+          <div class="popup__container">
+            <p class="popup__text">или</p>
+            <button class="button popup__button-link" id="button-signin">Войти</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="signup-result">
+      <div class="popup popup_is-opened">
+        <div class="popup__content">
+          <img src="./images/back.svg" alt="Закрыть форму" class="popup__close">
+          <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+            <button type="submit" class="button popup__button-link popup__button-authorization">Выполнить вход</button>
+        </div>
+      </div>
+    </template>
+
+    <div class="overlay"></div>
+
+  </div>
+
+  <script type="module" src="main.274b50237bc32b83edfa.js"></script>
+</body>
 </html>

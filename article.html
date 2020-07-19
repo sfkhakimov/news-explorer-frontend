@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сайт поиска новостей">
+  <meta name="author" content="Shakir Khakimov, s.f.khakimov@gmail.com">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="article.1663d929064997ff4d11.css">
+</head>
+<body>
+
+  <div class="root">
+
+    <header class="header header_theme_white">
+      <div class="header__container">
+        <div class="header__content">
+          <div class="header__content-container">
+            <p class="header__name-project header__name-project_theme_white">NewsExplorer</p>
+            <input id="mobile-menu" type="checkbox" class="header__mobile-input">
+            <label for="mobile-menu" class="header__mobile-button header__mobile-button_theme_white"></label>
+          </div>
+        </div>
+        <div class="header__navigation-container">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="./index.html" class="link nav__link nav__link_theme_white">Главная</a>
+              </li>
+              <li id="nav-item-article" class="nav__item nav__item_display_none">
+                <a href="./article.html" class="link link_active nav__link nav__link_theme_white">Сохраненные статьи</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="button header__button header__button_theme_white">Шакир
+            <img src="./images/logout_dark.svg" alt="Выйти" class="header__button-image">
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="main">
+
+      <div class="saved-articles">
+        <div class="saved-articles__container">
+          <h2 class="saved-articles__title">Сохранённые статьи</h2>
+          <p class="saved-articles__subtitle"></p>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="result__container">
+          <div class="result__content">
+            <div class="result__cards">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer__container">
+          <p class="footer__text">&COPY; 2020 Supersite, Powered by News API</p>
+          <div class="footer__navigation">
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="./index.html" class="link nav__link nav__link_theme_dark">Главная</a>
+                </li>
+                <li class="nav__item">
+                  <a href="https://praktikum.yandex.ru/" target="_blank" class="link nav__link nav__link_theme_dark">Яндекс.Практикум</a>
+                </li>
+              </ul>
+            </nav>
+            <nav class="nav">
+              <ul class="nav__list nav__list_position">
+                <li class="nav__item">
+                  <a href="https://github.com/SFKhakimov" target="_blank" class="link nav__link nav__link_theme_dark">
+                    <img src="./images/github.svg" alt="github" class="nav__image">
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a href="https://www.facebook.com/profile.php?id=100022969904084" target="_blank" class="link nav__link nav__link_theme_dark">
+                    <img src="./images/fb.svg" alt="facebook" class="nav__image">
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="overlay"></div>
+
+    <template id="header-button-image">
+      <img src="./images/logout_dark.svg" alt="Выйти" class="header__button-image">
+    </template>
+
+    <template id="news-card">
+      <div class="news-card__image">
+        <p class="news-card__keywords"></p>
+        <button class="button news-card__button news-card__button_delete"></button>
+      </div>
+      <div class="news-card__container">
+        <p class="news-card__date"></p>
+        <a href="" class="link" target="_blank">
+          <h3 class="news-card__title"></h3>
+        </a>
+        <p class="news-card__description"></p>
+        <p class="news-card__source"></p>
+      </div>
+  </template>
+
+  </div>
+
+  <script type="module" src="article.9649989093f7dbcd3745.js"></script>
+</body>
+</html>
